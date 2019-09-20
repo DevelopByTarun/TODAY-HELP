@@ -1,0 +1,266 @@
+
+<h2>
+  {{myProp1}}
+</h2>
+<br>
+<p appMultipleStyle>
+  this style is apply through custom multiple style directive
+</p>
+<br>
+<p appCustomStyleTheme>
+  this style is apply through custom style theme directive with default settings
+</p>
+<br>
+<p appCustomStyleTheme colour="aquamarine" bg="lightyellow" fSize="40px" fWeight="bolder" fStyle="italic" fFamily="verdana" tAlign="center" tTransform="uppercase" bor="10px" bColour="red" bStyle="dotted">
+  this style is apply through custom style theme directive with hardcoded custom settings
+</p>
+<br><br>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label"><h5>Color&nbsp;::</h5></label>
+    <div class="col-sm-10">
+      <select class="custom-select" [(ngModel)]="mycolor">
+        <option value="" selected>Open this select menu</option>
+        <option *ngFor="let color of colorList" [value]="color">
+          {{color}}
+        </option>
+      </select>
+    </div>
+  </div>
+
+<div class="form-group row">
+  <label class="col-sm-2 col-form-label"><h5>BackgroundColor&nbsp;::</h5></label>
+  <div class="col-sm-10">
+    <select class="custom-select" [(ngModel)]="mybgcolor">
+      <option value="" selected>Open this select menu</option>
+      <option *ngFor="let bgcolor of bgcolorList" [value]="bgcolor">
+        {{bgcolor}}
+      </option>
+    </select>
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-sm-2 col-form-label"><h5>FontFamily&nbsp;::</h5></label>
+  <div class="col-sm-10">
+    <select class="custom-select" [(ngModel)]="myfntfamily">
+      <option value="" selected>Open this select menu</option>
+      <option *ngFor="let family of fntfamilyList" [value]="family">
+        {{family}}
+      </option>
+    </select>
+  </div>
+</div>
+
+  <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-2 col-form-label"><h5>FontSize&nbsp;::</h5></label>
+    <div class="col-sm-10">
+      <input type="text" [(ngModel)]="fntsize" class="form-control" id="inputPassword3" placeholder="Type Here">
+    </div>
+  </div>
+
+  <fieldset class="form-group">
+    <div class="row">
+      <legend class="col-form-label col-sm-2 pt-0"><h5>FontWeight&nbsp;::</h5></legend>
+      <div class="col-sm-10">
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" (input)="takeFontWeight($event)" id="customRadio1" name="customRadioInline1" class="custom-control-input" value="bold">
+          <label class="custom-control-label" for="customRadio1">Bold</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" (input)="takeFontWeight($event)" id="customRadio2" name="customRadioInline1" class="custom-control-input" value="bolder">
+          <label class="custom-control-label" for="customRadio2">Bolder</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" (input)="takeFontWeight($event)" id="customRadio3" name="customRadioInline1" class="custom-control-input" value="lighter">
+          <label class="custom-control-label" for="customRadio3">Lighter</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" (input)="takeFontWeight($event)" id="customRadio4" name="customRadioInline1" class="custom-control-input" value="unset">
+          <label class="custom-control-label" for="customRadio4">Unset</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" (input)="takeFontWeight($event)" id="customRadio5" name="customRadioInline1" class="custom-control-input" value="revert">
+          <label class="custom-control-label" for="customRadio5">Revert</label>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+
+<fieldset class="form-group">
+  <div class="row">
+    <legend class="col-form-label col-sm-2 pt-0"><h5>FontStyle&nbsp;::</h5></legend>
+    <div class="col-sm-10">
+      <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" (input)="takeFontStyle($event)" id="customRadio6" name="customRadioInline2" class="custom-control-input" value="italic">
+        <label class="custom-control-label" for="customRadio6">Italic</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" (input)="takeFontStyle($event)" id="customRadio7" name="customRadioInline2" class="custom-control-input" value="oblique">
+        <label class="custom-control-label" for="customRadio7">Oblique</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" (input)="takeFontStyle($event)" id="customRadio8" name="customRadioInline2" class="custom-control-input" value="initial">
+        <label class="custom-control-label" for="customRadio8">Initial</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" (input)="takeFontStyle($event)" id="customRadio9" name="customRadioInline2" class="custom-control-input" value="unset">
+        <label class="custom-control-label" for="customRadio9">Unset</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" (input)="takeFontStyle($event)" id="customRadio10" name="customRadioInline2" class="custom-control-input" value="inherit">
+        <label class="custom-control-label" for="customRadio10">Inherit</label>
+      </div>
+    </div>
+  </div>
+</fieldset>
+
+<fieldset class="form-group">
+  <div class="row">
+    <legend class="col-form-label col-sm-2 pt-0"><h5>TextAlign&nbsp;::</h5></legend>
+    <div class="col-sm-10">
+      <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" (input)="takeTextAlign($event)" id="customRadio11" name="customRadioInline3" class="custom-control-input" value="center">
+        <label class="custom-control-label" for="customRadio11">Center</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" (input)="takeTextAlign($event)" id="customRadio12" name="customRadioInline3" class="custom-control-input" value="right">
+        <label class="custom-control-label" for="customRadio12">Right</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" (input)="takeTextAlign($event)" id="customRadio13" name="customRadioInline3" class="custom-control-input" value="justify">
+        <label class="custom-control-label" for="customRadio13">Justify</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" (input)="takeTextAlign($event)" id="customRadio14" name="customRadioInline3" class="custom-control-input" value="start">
+        <label class="custom-control-label" for="customRadio14">Start</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" (input)="takeTextAlign($event)" id="customRadio15" name="customRadioInline3" class="custom-control-input" value="end">
+        <label class="custom-control-label" for="customRadio15">End</label>
+      </div>
+    </div>
+  </div>
+</fieldset>
+
+<fieldset class="form-group">
+  <div class="row">
+    <legend class="col-form-label col-sm-2 pt-0"><h5>TextTransform&nbsp;::</h5></legend>
+    <div class="col-sm-10">
+      <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" (input)="takeTextTransform($event)" id="customRadio16" name="customRadioInline4" class="custom-control-input" value="lowercase">
+        <label class="custom-control-label" for="customRadio16">Lowercase</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" (input)="takeTextTransform($event)" id="customRadio17" name="customRadioInline4" class="custom-control-input" value="uppercase">
+        <label class="custom-control-label" for="customRadio17">Uppercase</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" (input)="takeTextTransform($event)" id="customRadio18" name="customRadioInline4" class="custom-control-input" value="revert">
+        <label class="custom-control-label" for="customRadio18">Revert</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" (input)="takeTextTransform($event)" id="customRadio19" name="customRadioInline4" class="custom-control-input" value="capitalize">
+        <label class="custom-control-label" for="customRadio19">Capitalize</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" (input)="takeTextTransform($event)" id="customRadio20" name="customRadioInline4" class="custom-control-input" value="full-width">
+        <label class="custom-control-label" for="customRadio20">FullWidth</label>
+      </div>
+    </div>
+  </div>
+</fieldset>
+
+<div class="form-group row">
+  <label for="input2" class="col-sm-2 col-form-label"><h5>Border&nbsp;::</h5></label>
+  <div class="col-sm-10">
+    <input type="text" [(ngModel)]="bod" class="form-control" id="input2" placeholder="Type Here">
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-sm-2 col-form-label"><h5>BorderColor&nbsp;::</h5></label>
+  <div class="col-sm-10">
+    <select class="custom-select" [(ngModel)]="mybordercolor">
+      <option value="" selected>Open this select menu</option>
+      <option *ngFor="let bodcolor of bodcolorList" [value]="bodcolor">
+        {{bodcolor}}
+      </option>
+    </select>
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-sm-2 col-form-label"><h5>BorderStyle&nbsp;::</h5></label>
+  <div class="col-sm-10">
+    <select class="custom-select" [(ngModel)]="myborderstyle">
+      <option value="" selected>Open this select menu</option>
+      <option *ngFor="let bodstyle of bodstyleList" [value]="bodstyle">
+        {{bodstyle}}
+      </option>
+    </select>
+  </div>
+</div>
+<br>
+<h3 appMouseAction [myColor]="mycolor" [myBgColor]="mybgcolor" [myFontFamily]="myfntfamily" [myFontSize]="fntsize" [myFontWeight]="fntweight" [myFontStyle]="fntstyle" [myTextAlign]="txtalign" [myTextTransform]="txttransform" [myBorder]="bod" [myBorderColor]="mybordercolor" [myBorderStyle]="myborderstyle">
+  this style is apply through mouse action directive with dynamic custom settings and hover it
+</h3>
+<br>
+<article appAddClass myNewClass="apply">
+  this class is apply through add class directive with dynamic custom settings
+</article>
+<br><br>
+
+
+<div class="form-group row">
+  <label class="col-sm-2 col-form-label"><h5>Color&nbsp;::</h5></label>
+  <div class="col-sm-10">
+    <select class="custom-select" [(ngModel)]="colory">
+      <option value="" selected>Open this select menu</option>
+      <option *ngFor="let mycolory of coloryList" [value]="mycolory">
+        {{mycolory}}
+      </option>
+    </select>
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-sm-2 col-form-label"><h5>BackgroundColor&nbsp;::</h5></label>
+  <div class="col-sm-10">
+    <select class="custom-select" [(ngModel)]="bgcolory">
+      <option value="" selected>Open this select menu</option>
+      <option *ngFor="let mybgcolory of bgcoloryList" [value]="mybgcolory">
+        {{mybgcolory}}
+      </option>
+    </select>
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-sm-2 col-form-label"><h5>FontFamily&nbsp;::</h5></label>
+  <div class="col-sm-10">
+    <select class="custom-select" [(ngModel)]="fonty">
+      <option value="" selected>Open this select menu</option>
+      <option *ngFor="let myfonty of fontyList" [value]="myfonty">
+        {{myfonty}}
+      </option>
+    </select>
+  </div>
+</div>
+
+<div class="form-group row">
+  <label for="input8" class="col-sm-2 col-form-label"><h5>FontSize&nbsp;::</h5></label>
+  <div class="col-sm-10">
+    <input type="text" [(ngModel)]="fontysize" class="form-control" id="input8" placeholder="Enter Font Size">
+  </div>
+</div>
+
+<div class="form-group row">
+  <label for="input9" class="col-sm-2 col-form-label"><h5>FlagValue&nbsp;::</h5></label>
+  <div class="col-sm-10">
+    <input type="text" [(ngModel)]="flagValue" class="form-control" id="input9" placeholder="Enter Flag Value">
+  </div>
+</div>
+<br>
+<p appClickAction [myCol]="colory" [myBgCol]="bgcolory" [myFFamily]="fonty" [myFSize]="fontysize" [myFlag]="flagValue">
+  this style is apply through click action directive with dynamic custom settings
+</p>

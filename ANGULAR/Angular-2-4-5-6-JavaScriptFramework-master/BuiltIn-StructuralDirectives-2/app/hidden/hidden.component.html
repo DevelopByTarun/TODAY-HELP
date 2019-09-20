@@ -1,0 +1,9 @@
+<div>
+  <label for="sh" [style.font-size.px]="20">For Apply Hidden Directive On Div ::</label>
+  <input type="text" placeholder="type here...." id="sh" (input)="takeInput($event)"><br>
+  <br>
+  <div [hidden]="showme" [class]="myStyle">
+    <h2>Show Hide Example</h2>
+    <br>
+  </div>
+</div>

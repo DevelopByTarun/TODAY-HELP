@@ -1,0 +1,11 @@
+<h2 class="{{head}}">{{title}}</h2>
+<br/>
+<label for="one">Enter FirstNo&nbsp;::</label>
+<input type="text" id="one" (input)="takeFirstNo($event)" class="form-control" placeholder="type here"/>
+<br/>
+<label for="one">Enter SecondNo&nbsp;::</label>
+<input type="text" id="one" on-input="secondNo=$event.target.value" class="form-control" placeholder="type here"/>
+<br/>
+<h3>Value Of First No Is :: {{ firstNo }}</h3>
+<h3>Value Of Second No Is :: {{ secondNo }}</h3>
+<h3>Multiplication Of FirstNo And SecondNo Is :: {{ firstNo * secondNo }}</h3>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:600'>
+    <link rel="stylesheet" href="../Css/Style.css" />
+    <link rel="stylesheet" href="../Css/Stylesheet.css" />
+    <!--
+    <script src="../../Library/Angularjs/angular.min.js"></script>
+    <script src="../../Library/Angularjs/ngStorage.min.js"></script>
+-->
+<!--    <script src="../../AngularJs-Tools/Bower/bower_components/angular/angular.min.js"></script>-->
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<!--    <script src="../../AngularJs-Tools/Bower/bower_components/ngstorage/ngStorage.min.js"></script>-->
+   <script src="../Js/ngStorage.min.js"></script>
+   
+    <script src="../Js/App.js"></script>
+    <script src="../Js/Model.js"></script>
+    <script src="../Js/Controller.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="loginCtrl">
+    <br>
+    <h1>Authentication By AngularJs</h1><img src="../Images/139426.png" alt="img">
+    <br>
+    <br>
+    <div class="login-wrap">
+        <div class="login-html">
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked>
+            <label for="tab-1" class="tab">Sign In</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up">
+            <label for="tab-2" class="tab"></label>
+
+            <div class="login-form">
+
+                <div class="sign-in-htm">
+                    <form name="stud" novalidate>
+                        <div class="group">
+                            <label for="user" class="label">Username</label>
+                            <input id="user" type="text" class="input" ng-model="username" name="username" placeholder="Enter Username" pattern="[a-z]{4,10}[0-9]{2,6}" required>
+                            <span style="color:red;" ng-show="stud.username.$dirty && stud.username.$invalid">
+                                <span ng-show="stud.username.$error.required">
+                                    Username Is Required!!
+                                </span>
+                            <span ng-show="stud.username.$error.pattern">
+                                    Invalid Username!!
+                                </span>
+                            </span>
+                        </div>
+                        <br>
+                        <div class="group">
+                            <label for="pass" class="label">Password</label>
+                            <input id="pass" type="password" class="input" data-type="password" ng-model="password" name="password" placeholder="Enter Password" pattern="[A-Z]{4,10}[0-9]{2,6}" required>
+                            <span style="color:red;" ng-show="stud.password.$dirty && stud.password.$invalid">
+                                <span ng-show="stud.password.$error.required">
+                                    Password Is Required!!
+                                </span>
+                            <span ng-show="stud.password.$error.pattern">
+                                    Invalid Password!!
+                                </span>
+                            </span>
+                        </div>
+                        <br>
+                        <div class="group">
+                            <input id="check" type="checkbox" class="check" checked>
+                            <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                        </div>
+                        <br>
+                        <div class="group">
+                            <button ng-click="getLogin()" class="button">Sign In</button>
+                        </div>
+                        <br>
+                        <div class="group">
+                            <button ng-click="saveData()" class="button">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

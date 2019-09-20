@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Question Bank</title>
+<!--    <link rel="stylesheet" href="../../AngularJs-Tools/Bower/bower_components/bootstrap/dist/css/bootstrap.min.css" />-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!--    <script src="../../AngularJs-Tools/Bower/bower_components/angular/angular.min.js"></script>-->
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="../Js/App2.js"></script>
+    <script src="../Js/Model2.js"></script>
+    <script src="../Js/Controller2.js"></script>
+    <style>
+        body {
+            background-image: url("../Images/9b_Angular-JS-development.png");
+        }
+    </style>
+</head>
+
+<body ng-app="myApp2" ng-controller="mockCtrl">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12">
+                <header>
+                    <h1 class="text-center">AngularJs Mock Test</h1>
+                    <br>
+                </header>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <section>
+                    <!--
+                   <div ng-model="Ques">
+      Q:{{Ques}}
+       <ul>
+			<li ng-repeat="option in Ans">
+				<label>
+					<input type="radio" name="answer" ng-model="value" value="foo" ng-change="change()"> 
+					{{option}}
+				</label>
+			</li>
+		</ul>
+</div>
+<button class="btn btn-info btn-lg" ng-click="callPrev()" type="button">Previous</button>
+<br>
+<button class="btn btn-success btn-lg" ng-click="callNext()" type="button">Next</button>
+-->
+                    <div class="table-responsive">
+                        <table class="table table-condensed" ng-model="Ques">
+                            <tr>
+                                <td colspan="2">
+                                    Question :: {{Ques}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <ul class="list-unstyled">
+                                        <li ng-repeat="option in Ans">
+                                            <label>
+                                                <input type="radio" name="answer" ng-model="value" value="foo" ng-change="change()"> {{option}}
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class="btn btn-info btn-lg" ng-click="callPrev()">Previous</button>
+                                </td>
+                                <td>
+                                    <button type="submit" class="btn btn-danger btn-lg" ng-click="submit()" ng-show="answerMode">Submit</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-success btn-lg" ng-click="callNext()">Next</button>
+                                </td>
+                            </tr>
+                            <tr class="alert-info">
+                                <div ng-show>
+                                    <span ng-show="correctAns" style="color:red;">That is correct!</span>
+                                    <span ng-show="!correctAns" style="color:red;">Sorry, that is an incorrect answer.</span>
+                                </div>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

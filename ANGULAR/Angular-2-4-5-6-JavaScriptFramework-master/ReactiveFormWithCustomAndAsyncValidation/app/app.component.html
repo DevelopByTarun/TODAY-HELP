@@ -1,0 +1,22 @@
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 [ngClass]="'apply'">
+        {{title}}
+      </h1>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <app-home [prop1]="subtitle1" [prop2]="subtitle2"></app-home>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

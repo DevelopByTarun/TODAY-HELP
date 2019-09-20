@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="head">{{title}}</h1>
+            <br/>
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>No</th>
+                        <th>Syntax</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row">1</td>
+                        <td>class="required"</td>
+                        <td class="required">Hello Class Binding</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">2</td>
+                        <td>[class.required]="isReq"</td>
+                        <td [class.required]="isReq">Hello Class Binding</td>
+                    </tr>
+                    <tr>
+                       <td scope="row">3</td>
+                        <td>bind-class.required="isReq"</td>
+                        <td bind-class.required="isReq">Hello Class Binding</td>
+                    </tr>
+                      <tr>
+                        <td scope="row">4</td>
+                        <td>[class.required]="!isReq"</td>
+                        <td [class.required]="!isReq">Hello Class Binding</td>
+                    </tr>
+                     <tr>
+                        <td scope="row">5</td>
+                        <td>bind-class.required="!isReq"</td>
+                        <td bind-class.required="!isReq">Hello Class Binding</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">6</td>
+                        <td>class="optional"</td>
+                        <td class="optional">Hello Class Binding</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">7</td>
+                        <td>[class.optional]="isOptional('yes')"</td>
+                        <td [class.optional]="isOptional('yes')">Hello Class Binding</td>
+                    </tr>
+                     <tr>
+                        <td scope="row">8</td>
+                        <td>[class.optional]="isOptional(no)"</td>
+                        <td [class.optional]="isOptional('no')">Hello Class Binding</td>
+                    </tr>
+
+                     <tr>
+                        <td scope="row">9</td>
+                        <td>bind-class.optional="isOptional('yes')"</td>
+                        <td bind-class.optional="isOptional('yes')">Hello Class Binding</td>
+                    </tr>
+                     <tr>
+                        <td scope="row">10</td>
+                        <td>bind-class.optional="isOptional('no')"</td>
+                        <td bind-class.optional="isOptional('no')">Hello Class Binding</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

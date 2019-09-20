@@ -1,0 +1,122 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="notice notice-danger" style="text-align:center;">Validation Demo3</h3>
+            <br>
+            <section>
+                <div [hidden]="submitted">
+                    <form (ngSubmit)="formSubmit(loginfm)" class="form-horizontal" #loginfm="ngForm">
+                        <div class="form-group">
+                            <label for="tx" class="col-sm-2 control-label">Username ::</label>
+                            <div class="col-sm-10">
+                                <input name="uid" [(ngModel)]="modeluid" #uidinput="ngModel" required pattern="[a-z0-9A-Z]{4,10}" type="text" class="form-control"
+                                    id="tx" placeholder="Enter Username">
+                                <span *ngIf="uidinput.touched && uidinput.pristine" class="error">
+                                    <!-- Username Can't Be Blank! -->
+                                    <span *ngIf="uidinput.errors.required">
+                                        Username Can't Be Blank!
+                                    </span>
+                                </span>
+                                <span *ngIf="uidinput.invalid && uidinput.dirty" class="error">
+                                    <!-- Invalid Username! -->
+                                    <span *ngIf="uidinput.errors.pattern">
+                                        Invalid Username!
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="tx" class="col-sm-2 control-label">Password ::</label>
+                            <div class="col-sm-10">
+                                <input name="pwd" [(ngModel)]="modelpwd" #pwdinput="ngModel" required pattern="[a-z0-9A-Z]{4,10}" type="password" class="form-control"
+                                    id="tx" placeholder="Enter Password">
+                                <span *ngIf="pwdinput.touched && pwdinput.pristine" class="error">
+                                    <!-- Password Can't Be Blank! -->
+                                    <span *ngIf="pwdinput.errors.required">
+                                        Password Can't Be Blank!
+                                    </span>
+                                </span>
+                                <span *ngIf="pwdinput.invalid && pwdinput.dirty" class="error">
+                                    <!-- Invalid Password! -->
+                                    <span *ngIf="pwdinput.errors.pattern">
+                                        Invalid Password!
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="tx" class="col-sm-2 control-label">Email ::</label>
+                            <div class="col-sm-10">
+                                <input name="emal" [(ngModel)]="modelemal" #emalinput="ngModel" required pattern="[a-z0-9A-Z!@#$%^&*()_.]{8,25}" type="email"
+                                    class="form-control" id="tx" placeholder="Enter Email">
+                                <span *ngIf="emalinput.touched && emalinput.pristine" class="error">
+                                    <!-- Email Can't Be Blank! -->
+                                    <span *ngIf="emalinput.errors.required">
+                                        Email Can't Be Blank!
+                                    </span>
+                                </span>
+                                <span *ngIf="emalinput.invalid && emalinput.dirty" class="error">
+                                    <!-- Invalid Email! -->
+                                    <span *ngIf="emalinput.errors.pattern">
+                                        Invalid Email!
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="tx" class="col-sm-2 control-label">City ::</label>
+                            <div class="col-sm-10">
+                                <select name="ddown" [(ngModel)]="modelddown" #ddowninput="ngModel" required class="form-control" id="tx">
+                                    <option *ngFor="let dd of dropDown" [value]="dd">{{dd}}</option>
+                                </select>
+                                <span *ngIf="ddowninput.touched && ddowninput.pristine" class="error">
+                                    <!-- City Is Required! -->
+                                    <span *ngIf="ddowninput.errors.required">
+                                        City Can't Be Blank!
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button [disabled]="loginfm.invalid" type="submit" class="btn btn-danger btn3d btn-lg">
+                                    <span class="glyphicon glyphicon-cloud"></span> Login</button>
+
+                                <button (click)="getReset($event)" type="submit" class="btn btn-warning btn3d btn-lg">
+                                    <span class="glyphicon glyphicon-warning-sign"></span> Reset</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div [hidden]="!submitted">
+        <div class="row">
+            <div class="col-xs-3 notice notice-danger">Username ::</div>
+            <div class="col-xs-9  pull-left notice notice-danger">{{ uidinput.value }}</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3 notice notice-warning">Password ::</div>
+            <div class="col-xs-9 pull-left notice notice-warning">{{ pwdinput.value }}</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3 notice notice-info">Email ::</div>
+            <div class="col-xs-9 pull-left notice notice-info">{{ modelemal }}</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3 notice notice-success">City ::</div>
+            <div class="col-xs-9 pull-left notice notice-success">{{ modelddown }}</div>
+        </div>
+        <br>
+        <button class="btn btn-primary btn3d btn-lg" (click)="submitted=false">Edit</button>
+    </div>
+</div>
+
+<!-- States of a field
+1. $touched - field has been touched (blur focusout)
+2. $untouched - field not touched
+3. $pristine - no modification
+4. $dirty - modified
+5. $invalid - field is invalid
+6. $valid- field is valid -->

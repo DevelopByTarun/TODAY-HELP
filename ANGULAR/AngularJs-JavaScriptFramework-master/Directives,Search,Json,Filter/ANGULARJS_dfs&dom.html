@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<!--    <link rel="stylesheet" href="../../Library/bootstrap/css/bootstrap.min.css" />-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!--    <script src="../../Library/Angularjs/angular.min.js"></script>-->
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script>
+        var app = angular.module("dfsj", []);
+        app.controller("ctrl1", ($scope) => {
+            $scope.names = [{
+                    id: 101,
+                    name: 'tarun',
+                    age: 30
+                },
+                {
+                    id: 102,
+                    name: 'varun',
+                    age: 24
+                },
+                {
+                    id: 103,
+                    name: 'uma',
+                    age: 56
+                },
+                {
+                    id: 104,
+                    name: 'ajay',
+                    age: 53
+                }
+            ];
+            
+            $scope.arr = ['tarun','varun','rina','seema','sneha','neha','rani','gautam'];
+            
+            $scope.myData = [{
+                    id: 101,
+                    name: 'tarun',
+                    salary: 71987
+                },
+                {
+                    id: 102,
+                    name: 'varun',
+                    salary: 57145
+                },
+                {
+                    id: 103,
+                    name: 'uma',
+                    salary: 74145
+                },
+                {
+                    id: 104,
+                    name: 'ajay',
+                    salary: 84856
+                }
+            ];
+        });
+    </script>
+    <style>
+        .notice1 {
+            padding: 12px;
+            background-color: #fafafa;
+            border-left: 6px solid #7f7f84;
+            margin-bottom: 10px;
+            -webkit-box-shadow: 0 5px 8px -6px rgba(0, 0, 0, .2);
+            -moz-box-shadow: 0 5px 8px -6px rgba(0, 0, 0, .2);
+            box-shadow: 0 5px 8px -6px rgba(0, 0, 0, .2);
+        }
+        
+        .notice-warning {
+            border-color: #FEAF20;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="text-center">Directives Filter Search Json And Dom</h1>
+    
+    <div ng-app="dfsj" ng-controller="ctrl1">
+       <h2>ng-repeat</h2>
+        <ul>
+            <li ng-repeat="n in names" class="notice1 notice-warning">
+                {{n.id+", "+n.name+", "+n.age}}
+            </li>
+        </ul>
+        <hr>
+        <h2>ng-repeat with filter orderBy</h2>
+        <ul>
+            <li ng-repeat="n in names|orderBy:'name'" class="notice1 notice-warning">
+                {{n.id+", "+n.name+", "+n.age}}
+            </li>
+        </ul>
+        <hr>
+        <h2>filter an array based on user input</h2>
+        <label for="">Enter For Search By Name</label>
+        <input type="text" ng-model="name">
+        <ul>
+            <li ng-repeat="a in arr|filter:name" class="notice1 notice-warning">
+                {{a}}
+            </li>
+        </ul>
+        <hr>
+        <h2>ng-repeat, filter, orderBy with textbox and checkbox</h2>
+        <label for="">Enter For Search ::</label>
+        <input type="text" ng-model="search">&nbsp;
+        <select ng-model="sort">
+            <option>id</option>
+            <option>name</option>
+            <option>salary</option>
+        </select>&nbsp;
+        <input type="checkbox" ng-model="reverse">
+        <ul>
+            <li ng-repeat="md in myData|filter:search|orderBy:sort:reverse" class="notice1 notice-warning">
+                {{md.id+", "+md.name+", "+md.salary}}
+            </li>
+        </ul>
+        <hr>
+        <h2>ng-show and ng-hide</h2>
+        <input type="checkbox" ng-model="show">
+        <div ng-show="show" style="height:100px; width:100px; background-color:red;">
+            Show Hide Example {{show}}
+        </div>
+    </div>
+
+</body>
+
+</html>

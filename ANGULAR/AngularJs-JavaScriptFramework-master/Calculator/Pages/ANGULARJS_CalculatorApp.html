@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator App</title>
+<!--    <link rel="stylesheet" href="../../../Library/bootstrap/css/bootstrap.min.css" />-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!--    <script src="../../../Library/Angularjs/angular.min.js"></script>-->
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="../Js/App.js"></script>
+    <script src="../Js/Model.js"></script>
+    <script src="../Js/Controller.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center">MVC Calculator Application</h1>
+                <div ng-app="CalculatorApp">
+                    <div ng-controller="CalculatorController">
+                        <form>
+                            <label for="">First Number :</label>
+                            <input type="text" ng-model="firstno" class="form-control" placeholder="Enter First Number" />
+                            <br>
+                            <label for="">Second Number :</label>
+                            <input type="text" ng-model="secondno" class="form-control" placeholder="Enter Second Number" />
+                            <br>
+                            <button class="btn btn-success btn-lg" ng-click="addition()">+</button>
+                            <button class="btn btn-primary btn-lg" ng-click="subtraction()">-</button>
+                            <button class="btn btn-warning btn-lg" ng-click="multiplication()">*</button>
+                            <button class="btn btn-danger btn-lg" ng-click="division()">/</button>
+                            <br>
+                            <h3 class="alert-info">{{message|currency}}</h3>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

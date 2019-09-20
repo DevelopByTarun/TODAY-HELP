@@ -1,0 +1,21 @@
+.one {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.two {
+  color: aqua;
+  font-family: "Apple Braille";
+}
+
+/*.fonty ul .red {*/
+  /*font-family: "Weibei TC";*/
+  /*text-transform: uppercase;*/
+  /*text-align: center;*/
+/*}*/
+
+.red {
+  font-family: "Weibei TC";
+  text-transform: uppercase;
+  font-style: initial;
+}

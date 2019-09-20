@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<!--    <link rel="stylesheet" href="../../../Library/bootstrap/css/bootstrap.min.css"/>-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="../Css/Stylesheet.css"/>
+<!--    <script src="../../../Library/Angularjs/angular.min.js"></script>-->
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="../Js/App.js"></script>
+    <script src="../Js/Model.js"></script>
+    <script src="../Js/Controller.js"></script>
+</head>
+<body>
+    <div class="container"><!--container start-->
+
+        <div class="row"><!--row1 start-->
+            <div class="col-md-12">
+                <h1 class="text-center">Student Marksheet App</h1>
+            </div>
+        </div><!--row1 close-->
+        
+        <div ng-app="SMapp" ng-controller="SMctrl"><!--ng-app and ng-controller start-->
+           
+            <div class="row"><!--row2 start-->
+                <div class="col-md-6">
+                    <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Html</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control" id="inputEmail3" placeholder="Enter Html Marks" ng-model="html">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Java</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control" id="inputEmail3" placeholder="Enter Java Marks" ng-model="java">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Css</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control" id="inputEmail3" placeholder="Enter Css Marks" ng-model="css">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Mean</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control" id="inputEmail3" placeholder="Enter Mean Marks" ng-model="mean">
+                                </div>
+                            </div>
+                        </form>
+                </div>
+
+                <div class="col-md-6">
+                    <h4 class="notice notice-danger">Total :: {{total}}</h4><br>
+                    <h4 class="notice notice-danger">Average :: {{percent}}</h4>
+                    <h4 class="notice notice-warning">Percentage :: {{avg}}</h4><br>
+                </div>
+            </div><!--row2 close-->
+            
+            <div class="row"><!--row3 start-->
+                <div class="col-xs-12">
+                    <button class="btn btn-primary btn3d" ng-click="calculate()"><span class="glyphicon glyphicon-cloud"></span>Calculate</button>
+                </div>
+            </div><!--row3 close-->
+            
+        </div><!--ng-app and ng-controller close-->
+        
+    </div><!--container close-->
+</body>
+</html>

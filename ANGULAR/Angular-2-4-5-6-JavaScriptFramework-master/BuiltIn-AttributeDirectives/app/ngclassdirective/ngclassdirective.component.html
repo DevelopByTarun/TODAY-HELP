@@ -1,0 +1,15 @@
+<h2>{{myTitle}}</h2>
+<br/>
+<h3 [ngClass]="'one two'">Apply Multiple Css Class Thru Ng Class On String Basis</h3>
+<br/><br/>
+<ul>
+  <li *ngFor="let item of itemList">
+    <h3 [ngClass]="{'blue': item.price>=5000, 'red': item.price<5000}">
+     {{item.id}}&nbsp;{{item.name}}&nbsp;{{item.price}}&nbsp;{{item.desc}}&nbsp;<img src="{{item.image}}" alt="ImageNotFound">
+    </h3>
+  </li>
+</ul>
+<br/><br/>
+<p [ngClass]="getCssClassesByComponentMethod('right')">
+apply multiple css class thru ng class using component method
+</p>

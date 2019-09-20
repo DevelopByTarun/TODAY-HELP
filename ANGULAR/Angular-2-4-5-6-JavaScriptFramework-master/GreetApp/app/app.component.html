@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+    <br/>
+      <h1 [class]="styles">{{title}}</h1>
+      <br/>
+     <form>
+  <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>FirstName&nbsp;::</strong></label>
+    <div class="col-sm-10">
+      <input type="text" (input)="takeFirstName($event)" class="form-control" id="inputEmail3" placeholder="Enter First Name">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-2 col-form-label"><strong>LastName&nbsp;::</strong></label>
+    <div class="col-sm-10">
+      <input type="text" (input)="takeLastName($event)" class="form-control" id="inputPassword3" placeholder="Enter Last Name">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-2 col-form-label"></label>
+    <div class="col-sm-10">
+      <button type="submit" (click)="showFullName()" class="btn btn-warning">Greet</button>&nbsp;&nbsp;
+      <button type="submit" (click)="initUppercase()" class="btn btn-dark">UpperCase</button>&nbsp;&nbsp;
+      <button type="submit" (click)="intiCapitalize()" class="btn btn-danger">Capitalize</button>
+    </div>
+  </div>
+</form>
+<br/>
+<br/>
+<div class="alert alert-dark" role="alert">
+  <h3 class="fonty">{{fullName}}</h3>
+</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+    <br/>
+      <h1 [style.color]="title == null ? 'red' : 'aqua'" [style.background-color]="title != null ? 'black' : 'white'" class="text-center">
+        {{title}}
+      </h1>
+      <br/><br/>
+     <app-textbox></app-textbox>
+     <br/>
+     <hr/>
+     <br/>
+     <div>
+      <app-changestyle [(myTitle)]="title2" [(myTextSize)]="textSize"></app-changestyle>
+      <p [style.font-size.px]="textSize" [style.color]="isColoury ? 'orange' : 'blue'">
+      <strong>Welcome To Change Style Between Components</strong>
+      </p>
+     </div>
+     <br/>
+     <hr/>
+     <br/>
+     <div>
+      <app-selectbox [(myTitle)]="title3" [(myColorsArray)]="colors"></app-selectbox>
+     </div>
+     <br/>
+     <hr/>
+     <br/>
+     <div>
+      <app-objectproperty [(myTitle)]="title4" [(myName)]="emp.name" [(myCity)]="emp.city"></app-objectproperty>
+      <h4>
+      My Name Is :: <strong [style.color]="isStylist ? 'red': 'green'">{{emp.name}}</strong><br/>
+      <br>
+      My City Is :: <strong [style.color]="!isStylist ? 'blue': 'green'">{{emp.city}}</strong>
+      </h4>
+     </div>
+     <br/>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Controller Data Sharing</title>
+<!--    <link rel="stylesheet" href="../../../Library/bootstrap/css/bootstrap.min.css" />-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!--    <script src="../../../Library/Angularjs/angular.min.js"></script>-->
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="../Js/App.js"></script>
+    <script src="../Js/Model.js"></script>
+    <script src="../Js/Controller.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div ng-app="ControllerDataSharingApp">
+                    <!--Inheritance-->
+                    <h2 class="text-center">Controller Data Sharing With Inheritance</h2>
+                    <div ng-controller="Ctrl1">
+                        <label for="">Enter First Name ::</label>
+                        <input type="text" ng-model="firstname" />
+                        <h3 class="alert-danger">Hello {{firstname}}!</h3>
+                        <div ng-controller="Ctrl2">
+                            <label for="">Enter Last Name ::</label>
+                            <input type="text" ng-model="lastname" />
+                            <h3 class="alert-success">Hello {{firstname}} {{lastname}}!</h3>
+                        </div>
+                    </div>
+                    <br>
+                    <hr>
+                    <!--Inheritance With $rootScope-->
+                    <h2 class="text-center">Controller Data Sharing With $RootScope</h2>
+                    <div ng-controller="Ctrl3">
+                        <label for="">Enter First Name ::</label>
+                        <input type="text" ng-model="firstname" />
+                        <h3 class="alert-danger">Hello {{firstname}}!</h3>
+                        <div ng-controller="Ctrl4">
+                            <label for="">Enter Last Name ::</label>
+                            <input type="text" ng-model="lastname" />
+                            <h3 class="alert-success">Hello {{firstname}} {{lastname}}!</h3>
+                            <button class="btn btn-danger" ng-click="passValue()">Pass!!@@</button>
+                        </div>
+                    </div>
+                    <div ng-controller="Ctrl5">
+                        <label for="">Enter Middle Name ::</label>
+                        <input type="text" ng-model="middlename" />
+                        <h3 class="alert-info">Hello {{firstname}} {{middlename}} {{lastname}}!</h3>
+                    </div>
+                    <br>
+                    <hr>
+                    <!--Service With Factory-->
+                    <h2 class="text-center">Controller Data Sharing With Service &amp; Factory</h2>
+                    <div ng-controller="Ctrl6">
+                        <label for="">Enter Value Of X ::</label>
+                        <input type="text" ng-model="xval" />&nbsp;
+                        <label for="">Enter Value Of Y ::</label>
+                        <input type="text" ng-model="yval" />
+                        <button class="btn btn-warning" ng-click="pushValue()">Push!!@@</button>
+                        <br>
+                    </div>
+                    <div ng-controller="Ctrl7">
+                        <button class="btn btn-success" ng-click="pullValue()">Pull!!@@</button>
+                        <h3 class="alert-warning">Value Of X Is {{xval|currency}} And Y Is {{yval|currency}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

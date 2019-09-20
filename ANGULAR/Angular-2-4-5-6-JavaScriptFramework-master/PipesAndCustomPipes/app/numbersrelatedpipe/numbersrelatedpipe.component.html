@@ -1,0 +1,156 @@
+<h2>{{myProp1 | uppercase}}</h2>
+<br>
+<div class="alert alert-warning">
+  <h3>{{myProp2}}</h3>
+</div>
+<table class="table table-bordered table-striped">
+  <thead class="thead-dark">
+  <tr>
+    <th>No</th>
+    <th>Syntax</th>
+    <th>Output</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td scope="row">1</td>
+    <td>
+      <h5>num1 | number</h5>
+    </td>
+    <td>
+      <h5>{{num1 | number }}</h5>
+    </td>
+  </tr>
+  <tr>
+    <td scope="row">2</td>
+    <td>
+      <h5>num1 | number:'3.2-5'</h5>
+    </td>
+    <td>
+      <h5>{{num1 | number:'3.2-5' }}</h5>
+    </td>
+  </tr>
+  <tr>
+    <td scope="row">3</td>
+    <td>
+      <h5>num2 | number:'3.2-5'</h5>
+    </td>
+    <td>
+      <h5>{{num2 | number:'3.2-5'}}</h5>
+    </td>
+  </tr>
+  <tr>
+    <td scope="row">4</td>
+    <td>
+      <h5>num1 * num2 | number:'1.3-6'</h5>
+    </td>
+    <td>
+      <h5>{{num1 * num2 | number:'1.3-6'}}</h5>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<br><br>
+
+<div class="alert alert-danger">
+  <h3>{{myProp3}}</h3>
+</div>
+<table class="table table-bordered table-striped">
+  <thead class="thead-dark">
+  <tr>
+    <th>No</th>
+    <th>Syntax</th>
+    <th>Output</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td scope="row">1</td>
+    <td>
+      <h5>num3 | percent</h5>
+    </td>
+    <td>
+      <h5>{{num3 | percent}}</h5>
+    </td>
+  </tr>
+  <tr>
+    <td scope="row">2</td>
+    <td>
+      <h5>num3 | percent:'2.2-5'</h5>
+    </td>
+    <td>
+      <h5>{{num3 | percent:'2.2-5'}}</h5>
+    </td>
+  </tr>
+  <tr>
+    <td scope="row">3</td>
+    <td>
+      <h5>num4 | percent:'1.2-5'</h5>
+    </td>
+    <td>
+      <h5>{{num4 | percent:'1.2-5'}}</h5>
+    </td>
+  </tr>
+  <tr>
+    <td scope="row">4</td>
+    <td>
+      <h5>num3 * num4 | percent:'1.2-3'</h5>
+    </td>
+    <td>
+      <h5>{{num3 * num4 | percent:'1.2-3'}}</h5>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<br><br>
+<div class="alert alert-dark">
+  <h3>{{myProp4}}</h3>
+</div>
+<table class="table table-bordered table-striped">
+  <thead class="thead-dark">
+  <tr>
+    <th>No</th>
+    <th>Syntax</th>
+    <th>Output</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td scope="row">1</td>
+    <td>
+      <h5>cur1 | currency:'INR':false</h5>
+    </td>
+    <td>
+      <h5>{{cur1 | currency:'INR':false}}</h5>
+    </td>
+  </tr>
+  <tr>
+    <td scope="row">2</td>
+    <td>
+      <h5>cur2 | currency:'INR':false:'1.2-4'</h5>
+    </td>
+    <td>
+      <h5>{{cur2 | currency:'INR':false:'1.2-4'}}</h5>
+    </td>
+  </tr>
+  <tr>
+    <td scope="row">3</td>
+    <td>
+      <h5>cur1 | currency</h5>
+    </td>
+    <td>
+      <h5>{{cur1 | currency}}</h5>
+    </td>
+  </tr>
+  <tr>
+    <td scope="row">4</td>
+    <td>
+      <h5>num3 * num4 | percent:'1.2-3'</h5>
+    </td>
+    <td>
+      <h5>{{cur2 | currency:'USD':true:'2.2-4'}}</h5>
+    </td>
+  </tr>
+  </tbody>
+</table>

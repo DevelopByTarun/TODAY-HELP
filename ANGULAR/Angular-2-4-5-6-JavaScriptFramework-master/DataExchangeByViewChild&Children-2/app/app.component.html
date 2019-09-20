@@ -1,0 +1,43 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+      <br>
+			<h1 [class.head]="titleRequired">{{title}}</h1>
+      <br>
+      <h2 [style.font-family]="fonty">{{subtitle1}}</h2>
+      <br>
+      <button type="button" (click)="updateChild()" class="btn btn-primary btn-lg">
+        Update Child Message Through Parent
+      </button>
+      <br><br>
+      <app-child></app-child>
+      <br>
+      <hr>
+      <br>
+      <h2 [style.font-family]="fonty">{{subtitle2}}</h2>
+      <br>
+      <button type="button" (click)="getBooksFromChild2()" class="btn btn-danger btn-lg">
+        Get Book List From Child2
+      </button>
+      <br><br>
+      <app-child2 [books]="bookName1"></app-child2>
+      <app-child2 [books]="bookName2"></app-child2>
+      <app-child2 [books]="bookName3"></app-child2>
+      <app-child2 [books]="bookName4"></app-child2>
+      <app-child2 [books]="bookName5"></app-child2>
+      <app-child2 [books]="bookName6"></app-child2>
+      <br>
+      <hr>
+      <br>
+      <h2 [style.font-family]="fonty">{{subtitle3}}</h2>
+      <br>
+      <button type="button" (click)="getArrayFromChild3()" class="btn btn-dark btn-lg">
+        Get Fruits And Vegetable Array From Child3
+      </button>
+      <br><br>
+      <app-child3 [propArray]="fruitsArray"></app-child3>
+      <app-child3 [propArray]="vegetablesArray"></app-child3>
+      <br>
+		</div>
+	</div>
+</div>

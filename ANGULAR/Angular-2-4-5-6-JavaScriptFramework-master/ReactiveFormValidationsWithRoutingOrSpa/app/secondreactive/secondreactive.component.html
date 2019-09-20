@@ -1,0 +1,157 @@
+<br>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+      <h1>
+          Second Reactive Form With Validation
+        </h1>
+        <br>
+    <form [formGroup]="registerForm" (ngSubmit)="doRegister(registerForm.value)" class="form-horizontal">
+
+      <div class="form-group">
+        <label for="u" class="col-sm-2 control-label">Userid ::</label>
+        <div class="col-sm-10">
+          <input type="text" formControlName="uid" class="form-control" id="u" placeholder="Enter Userid">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="p" class="col-sm-2 control-label">Password</label>
+        <div class="col-sm-10">
+          <input type="password" formControlName="pwd" class="form-control" id="p" placeholder="Enter Password">
+        </div>
+      </div>
+
+      <div formGroupName="name">
+          <div class="form-group">
+              <label for="fn" class="col-sm-2 control-label">FirstName ::</label>
+              <div class="col-sm-10">
+                <input type="text" formControlName="firstname" class="form-control" id="fn" placeholder="Enter Firstname">
+              </div>
+            </div>
+            <div class="form-group">
+                <label for="ln" class="col-sm-2 control-label">LastName ::</label>
+                <div class="col-sm-10">
+                  <input type="text" formControlName="lastname" class="form-control" id="ln" placeholder="Enter Lastname">
+                </div>
+              </div>
+      </div>
+
+      <div class="form-group">
+          <label for="e" class="col-sm-2 control-label">Email ::</label>
+          <div class="col-sm-10">
+            <input type="email" formControlName="emal" class="form-control" id="e" placeholder="Enter Email">
+          </div>
+        </div>
+
+        <div formArrayName="address">
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">Address ::</label>
+                <div class="col-sm-10">
+                  <button type="submit" (click)="addAddressGroup($event)" class="btn btn-danger">Click It....</button>
+                </div>
+              </div>
+              <div *ngFor="let adder of registerForm.get('address').controls; let i = index" [formGroupName]="i">
+                  
+                <div class="form-group">
+                      <label for="s" class="col-sm-2 control-label">Street ::</label>
+                      <div class="col-sm-10">
+                        <input type="text" formControlName="street" class="form-control" id="s" placeholder="Enter Street">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pc" class="col-sm-2 control-label">Pincode ::</label>
+                        <div class="col-sm-10">
+                          <input type="number" formControlName="pincode" class="form-control" id="pc" placeholder="Enter Pincode">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="ct" class="col-sm-2 control-label">City ::</label>
+                          <div class="col-sm-10">
+                            <input type="text" formControlName="city" class="form-control" id="ct" placeholder="Enter City">
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="con" class="col-sm-2 control-label">Country ::</label>
+                            <div class="col-sm-10">
+                              <input type="text" formControlName="country" class="form-control" id="con" placeholder="Enter Country">
+                            </div>
+                          </div>
+
+              </div>
+        </div>
+
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-info">Register</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<div class="container">
+    <br>
+    <div class="row">
+      <div class="col-xs-3 notice notice-danger">Userid ::</div>
+      <div class="col-xs-9  pull-left notice notice-danger">{{ useridValue }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3 notice notice-warning">Password ::</div>
+      <div class="col-xs-9 pull-left notice notice-warning">{{ passwordValue }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3 notice notice-info">Email ::</div>
+      <div class="col-xs-9 pull-left notice notice-info">{{ emailValue }}</div>
+    </div>
+    <!-- <div class="row">
+        <div class="col-xs-3 notice notice-info">Firtsname ::</div>
+        <div class="col-xs-9 pull-left notice notice-info">{{ fnameValue }}</div>
+      </div> -->
+    <!-- <div class="row">
+      <div class="col-xs-3 notice notice-success">Form Values :: {{ registerForm.value | json}}</div>
+      <div class="col-xs-9 pull-left notice notice-success">Form Status :: {{ registerForm.status | json }}</div>
+    </div> -->
+  </div>
+
+
+
+
+
+
+
+
+<!-- <span *ngIf="firstForm.get('uid').touched && firstForm.get('uid').pristine">
+            <span *ngIf="firstForm.get('uid').errors.required" style="color:red;">
+             <strong>Userid Is Required</strong>
+            </span>
+          </span>
+          <span *ngIf="firstForm.get('uid').invalid && firstForm.get('uid').dirty">
+            <span *ngIf="firstForm.get('uid').errors.minlength" style="color:red;">
+              <strong>Userid Must Be Atleast 4 Characters Long</strong><br>
+            </span>
+            <span *ngIf="firstForm.get('uid').errors.maxlength" style="color:red;">
+              <strong>Userid Can Be 10 Characters Long</strong><br>
+            </span>
+            <span *ngIf="firstForm.get('uid').errors.pattern" style="color:red;">
+              <strong>Invalid Userid</strong>
+            </span>
+          </span> -->
+
+
+          <!-- States of a field
+1. $touched - field has been touched (blur focusout)
+2. $untouched - field not touched
+3. $pristine - no modification
+4. $dirty - modified
+5. $invalid - field is invalid
+6. $valid- field is valid -->
+
+
+

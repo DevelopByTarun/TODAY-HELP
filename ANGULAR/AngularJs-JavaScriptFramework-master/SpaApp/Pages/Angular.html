@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Library/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Library/bootstrap/Javascript/bootstrap.min.js">
+    <link rel="stylesheet" href="../Library/bootstrap/Jquery/jquery-3.2.1.min.js">
+    <link rel="stylesheet" href="../Css/AngularStylesheet.css">
+    <script src="../Library/Angularjs/angular.min.js"></script>
+    <script src="../Library/Angularjs/angular-route.min.js"></script>
+    <script src="../Module/Module.js"></script>
+    <script src="../Factory/Factory.js"></script>
+<!--    <script src="../Configuration/Config.js"></script>-->
+    <script src="../Controller/ContactUsController.js"></script>
+    <script src="../Controller/LoginController.js"></script>
+    <script src="../Controller/OffersController.js"></script>
+    <script src="../Controller/RegisterController.js"></script>
+    <script src="../Routes/Spa-Routes.js"></script>
+</head>
+
+<body ng-app="spaApp">
+   <br>
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-xs-12">
+                <header>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xs-12">
+
+                                <nav class="navbar navbar-inverse">
+                                    <div class="container-fluid">
+                                        <div class="navbar-header">
+                                            <a class="navbar-brand" href="#">SinglePageApp</a>
+                                        </div>
+                                        <ul class="nav navbar-nav">
+                                            <li class="active"><a ng-href="#/">Home</a></li>
+                                            <li><a ng-href="#/offers/2/20">Offers</a></li>
+                                            <li><a ng-href="#/contact">Contact Us</a></li>
+                                        </ul>
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li><a ng-href="#/register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+                                            <li><a ng-href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                                        </ul>
+                                    </div>
+                                </nav>
+
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-xs-12">
+                <article>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div id="showView" ng-view>
+                                    //
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

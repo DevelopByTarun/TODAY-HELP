@@ -1,0 +1,17 @@
+.one {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.two {
+  font-family: ".SF NS Text";
+  color: firebrick;
+}
+
+.three {
+  font-size: 5em;
+}
+
+.four {
+  font-stretch: semi-condensed;
+}

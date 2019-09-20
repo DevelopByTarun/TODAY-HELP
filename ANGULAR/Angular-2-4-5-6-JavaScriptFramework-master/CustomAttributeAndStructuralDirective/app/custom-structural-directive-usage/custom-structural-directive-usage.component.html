@@ -1,0 +1,92 @@
+<h2>
+  {{myProp1}}
+</h2>
+<br>
+<button type="button" class="btn btn-primary btn-lg" (click)="toggleShowView()">
+  toggle this view through myif directive with custom settings
+</button>
+<br><br>
+<ng-template [appMyIf]="showView">
+  <div class="alert alert-warning">
+  	<h4 [style.font-family]="isFonty? 'cursive':'verdana'">Condition Is Valid</h4>
+  </div>
+</ng-template>
+<ng-template [appMyIf]="!showView">
+  <div class="alert alert-danger">
+    <h4 [style.font-family]="!isFonty? 'cursive':'verdana'">Condition Is Invalid</h4>
+  </div>
+</ng-template>
+<br><br>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" (click)="checkHasView(true)" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline1">Toggle For True</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" (click)="checkHasView(false)" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline2">Toggle For False</label>
+</div>
+<br><br>
+<div *appMyIf="hasView">
+  <h4 [ngClass]="'isValid'">Condition Is Valid</h4>
+</div>
+<div *appMyIf="!hasView">
+  <h4 [ngClass]="'isInvalid'">Condition Is Invalid</h4>
+</div>
+<br>
+<br>
+<button type="button" class="btn btn-warning" (click)="getValidView()">
+  toggle this view for true through myifelse directive with custom settings
+</button>&nbsp;&nbsp;
+<button type="button" class="btn btn-danger" (click)="getInvalidView()">
+  toggle this view for false through myifelse directive with custom settings
+</button>
+<br><br>
+<div *appMyIfElse="view">
+  <p [ngClass]="'myValid'">Condition Is Valid</p>
+</div>
+<div *appMyIfElse="!view">
+  <p [ngClass]="'myInvalid'">Condition Is Invalid</p>
+</div>
+<br>
+<br>
+<br>
+<button type="button" class="btn btn-warning" (click)="getValidLoopView()">
+  toggle this view for true through myifelse and myloop directive
+</button>&nbsp;&nbsp;
+<button type="button" class="btn btn-danger" (click)="getInvalidLoopView()">
+  toggle this view for false through myifelse and myloop directive
+</button>
+<br><br>
+<div *appMyIfElse="myloopview">
+  <p [ngClass]="'myStyle1'" *appMyForLoop="myloopnum">Condition Is Valid With Loop</p>
+</div>
+<div *appMyIfElse="!myloopview">
+  <p [ngClass]="'myStyle2'" *appMyForLoop="myloopnum">Condition Is Invalid With Loop</p>
+</div>
+<br>
+<br>
+<br>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" (click)="getDelayLoopTimeout(true, 2000, 2)" id="customRadioInline3" name="customRadioInline2" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline3">Toggle For 2second</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" (click)="getDelayLoopTimeout(false, 5000, 5)" id="customRadioInline4" name="customRadioInline2" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline4">Toggle For 5second</label>
+</div>
+<br><br>
+<div *appMyIfElse="timeoutView">
+  <div *appMySetTimeout="timeoutDelay">
+    <p class="alert alert-warning" *appMyForLoop="timeoutLoop">
+      Condition Is Valid With 2second Delay And 2times Of Loop
+    </p>
+  </div>
+</div>
+<div *appMyIfElse="!timeoutView">
+  <div *appMySetTimeout="timeoutDelay">
+    <p class="alert alert-danger" *appMyForLoop="timeoutLoop">
+      Condition Is Invalid With 5second Delay And 5times Of Loop
+    </p>
+  </div>
+</div>
+<br>

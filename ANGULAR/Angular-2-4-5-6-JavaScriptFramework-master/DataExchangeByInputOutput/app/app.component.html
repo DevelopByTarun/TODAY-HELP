@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <br/>
+      <h1 [ngClass]="'one two'">{{title1}}</h1>
+      <br/><br/>
+      <app-childone
+        [head]="title2"
+        (plusFunction)="addition($event)"
+        (minusFunction)="subtraction($event)"
+        (multiplyFunction)="multiplication($event)"
+        (divideFunction)="division($event)"></app-childone>
+      <h4 class="alert alert-dark" role="alert">
+        Calc Result Is ::&nbsp;{{result}}
+      </h4>
+      <br/>
+      <hr/>
+      <br/>
+      <app-childtwo [head]="title3"
+                    (increaseFunction)="increment($event)"
+                    (decreaseFunction)="decrement($event)"></app-childtwo>
+      <br/><br/>
+      <h4 class="alert alert-info" role="alert">
+        Counter Is ::&nbsp;{{counter}}
+      </h4>
+    </div>
+  </div>
+</div>

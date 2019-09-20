@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Friend App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/libs/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/filters/myfilter.js"></script>
+    <script src="js/model/friendfactory.js"></script>
+    <script src="js/controller/friendcontroller.js"></script>
+    
+</head>
+<body>
+    <div ng-app="myfriendapp" ng-controller="friendctrl">
+      <input type="text" placeholder="Type to Search" ng-model="search.phone">
+      <select ng-model="sortby">
+          <option>name</option>
+          <option>address</option>
+      </select>
+      <select ng-model="pagelimit">
+          <option >1</option>
+          <option >2</option>
+          <option >3</option>
+      </select>
+      <input type="checkbox" ng-model="order">Reverse
+      Order Value is {{order}}
+       <ul ng-repeat="obj in result.data|filter:search|orderBy:sortby:order|limitTo:pagelimit">
+          
+           <li>
+           <div class="box">
+           <img ng-src='{{obj.image}}'>
+           
+           <p>{{obj.name|lowercase|initcap}}  </p>
+           <p>{{obj.address}}  </p>
+            <p>{{obj.phone|currency}}  </p>
+            <p>{{obj.email}}  </p>
+            </div>
+             </li>
+             
+       </ul>
+    </div>
+</body>
+</html>

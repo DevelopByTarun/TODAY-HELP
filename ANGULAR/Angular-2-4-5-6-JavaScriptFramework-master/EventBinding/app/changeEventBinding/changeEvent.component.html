@@ -1,0 +1,13 @@
+<h2 bind-class="head">{{title}}</h2>
+<br/>
+<label for="one">Enter FirstName&nbsp;::</label>
+<input type="text" id="one" (change)="takeFirstName($event)" class="form-control" placeholder="type here"/>
+<br/>
+<label for="two">Enter SecondName&nbsp;::</label>
+<input type="text" id="two" (change)="setSecondName($event.target.value)" class="form-control" placeholder="type here"/>
+<br/><br/>
+<button type="button" (click)="showName()" class="btn btn-warning btn-lg">Click For Full Name</button>
+<br/><br/>
+<!-- <h3>First Name Is :: {{ firstName }}</h3>
+<h3>Second Name Is :: {{ secondName }}</h3> -->
+<h3>My Name Is :: {{ fullName }}</h3>

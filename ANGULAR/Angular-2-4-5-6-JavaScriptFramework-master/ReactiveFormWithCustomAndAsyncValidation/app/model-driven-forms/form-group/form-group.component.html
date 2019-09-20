@@ -1,0 +1,198 @@
+
+
+<div [hidden]="submitted">
+  <form [formGroup]="registerForm" (submit)="submitStudentDetailsForm(registerForm)">
+    <div class="form-group row">
+      <label for="input12" class="col-sm-2 col-form-label"><h5>Name&nbsp;::</h5></label>
+      <div class="col-sm-10">
+        <input type="text" formControlName="name" class="form-control" id="input12" placeholder="Enter Name">
+        <span [ngClass]="'error1 error2'">
+          <div *ngIf="registerForm.get('name').invalid && registerForm.get('name').dirty && registerForm.get('name').errors['required']">
+          name is required
+        </div>
+        <div *ngIf="registerForm.get('name').invalid && registerForm.get('name').dirty && registerForm.get('name').errors['pattern']">
+          invalid name characters must be in small letters
+        </div>
+        <div *ngIf="registerForm.get('name').invalid && registerForm.get('name').dirty && registerForm.get('name').errors['minlength']">
+          name must be at least 4 characters long
+        </div>
+          <div *ngIf="registerForm.get('name').invalid && registerForm.get('name').dirty && registerForm.get('name').errors['blackStudents']">
+          name is black listed
+        </div>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="input13" class="col-sm-2 col-form-label"><h5>Age&nbsp;::</h5></label>
+      <div class="col-sm-10">
+        <input type="text" formControlName="age" class="form-control" id="input13" placeholder="Enter Age">
+        <span [ngClass]="'error1 error2'">
+          <div *ngIf="registerForm.get('age').invalid && registerForm.get('age').dirty && registerForm.get('age').errors['required']">
+            age is required
+        </div>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="input4" class="col-sm-2 col-form-label"><h5>Email&nbsp;::</h5></label>
+      <div class="col-sm-10">
+        <input type="text" formControlName="email" class="form-control" id="input4" placeholder="Enter Email">
+        <span [ngClass]="'error1 error2'">
+          <div *ngIf="registerForm.get('email').invalid && registerForm.get('email').dirty && registerForm.get('email').errors['required']">
+            email is required
+        </div>
+        <div *ngIf="registerForm.get('email').invalid && registerForm.get('email').dirty && registerForm.get('email').errors['pattern']">
+          invalid email must be in this format [a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]
+        </div>
+          <!--<div *ngIf="registerForm.get('email').invalid && registerForm.get('email').dirty && registerForm.get('email').errors['emailBlackListed']">-->
+            <!--email is blacklisted-->
+        <!--</div>-->
+        </span>
+      </div>
+    </div>
+
+    <div formGroupName="info">
+      <div class="form-group row">
+        <label for="input1" class="col-sm-2 col-form-label"><h5>Username&nbsp;::</h5></label>
+        <div class="col-sm-10">
+          <input type="text" formControlName="username" class="form-control" id="input1" placeholder="Enter Username">
+          <span [ngClass]="'error1 error2'">
+          <div *ngIf="registerForm.get('info.username').invalid && registerForm.get('info.username').dirty && registerForm.get('info.username').errors['required']">
+            username is required
+        </div>
+        <div *ngIf="registerForm.get('info.username').invalid && registerForm.get('info.username').dirty && registerForm.get('info.username').errors['pattern']">
+          invalid username characters must be in small letters
+        </div>
+        <div *ngIf="registerForm.get('info.username').invalid && registerForm.get('info.username').dirty && registerForm.get('info.username').errors['minlength']">
+          username must be at least 4 characters long
+        </div>
+        </span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="input2" class="col-sm-2 col-form-label"><h5>Password&nbsp;::</h5></label>
+        <div class="col-sm-10">
+          <input type="text" formControlName="password" class="form-control" id="input2" placeholder="Enter Password">
+          <span [ngClass]="'error1 error2'">
+          <div *ngIf="registerForm.get('info.password').invalid && registerForm.get('info.password').dirty && registerForm.get('info.password').errors['required']">
+            password is required
+        </div>
+        <div *ngIf="registerForm.get('info.password').invalid && registerForm.get('info.password').dirty && registerForm.get('info.password').errors['pattern']">
+          invalid password characters must be in capital letters
+        </div>
+        <div *ngIf="registerForm.get('info.password').invalid && registerForm.get('info.password').dirty && registerForm.get('info.password').errors['minlength']">
+          password must be at least 4 characters long
+        </div>
+        </span>
+        </div>
+      </div>
+    </div>
+
+    <fieldset class="form-group">
+      <div class="row">
+        <legend class="col-form-label col-sm-2 pt-0"><h5>Gender&nbsp;::</h5></legend>
+        <div class="col-sm-10">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="gender" name="gender" id="inlineRadio1" value="Male">
+            <label class="form-check-label" for="inlineRadio1">Male</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="gender" name="gender" id="inlineRadio2" value="Female">
+            <label class="form-check-label" for="inlineRadio2">Female</label>
+          </div>
+          <span [ngClass]="'error1 error2'">
+            <div *ngIf="registerForm.get('gender').invalid && registerForm.get('gender').dirty && registerForm.get('gender').errors['required']">
+                gender is required
+            </div>
+          </span>
+        </div>
+      </div>
+    </fieldset>
+
+    <div formArrayName="address">
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label"><h5>Address&nbsp;::</h5></label>
+        <div class="col-sm-10">
+          <button type="button" class="btn btn-info" (click)="addStudentAddressFieldsInFormArray()">
+            Add Address
+          </button>
+        </div>
+      </div>
+      <div *ngFor="let address of registerForm.get('address').controls; let i=index" class="form-group row card">
+        <div class="card-body" [formGroupName]="i">
+          <div class="form-group row col-sm-6">
+            <label for="input21" class="col-form-label"><h5>State&nbsp;::</h5></label>
+            <input type="text" id="input21" formControlName="state" class="form-control" placeholder="Enter State">
+          </div>
+          <div class="form-group row col-sm-6">
+            <label for="input22" class="col-form-label"><h5>Country&nbsp;::</h5></label>
+            <input type="text" id="input22" formControlName="country" class="form-control" placeholder="Enter Country">
+          </div>
+          <div class="form-group row col-sm-6">
+            <label for="input23" class="col-form-label"><h5>Pincode&nbsp;::</h5></label>
+            <input type="text" id="input23" formControlName="pincode" class="form-control" placeholder="Enter Pincode">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="input1" class="col-sm-2 col-form-label"></label>
+      <div class="col-sm-10">
+        <button type="submit" class="btn btn-success">Student Registration Details</button>&nbsp;&nbsp;
+        <button type="button" (click)="resetForm()" class="btn btn-danger">Reset Student Form</button>&nbsp;&nbsp;
+      </div>
+    </div>
+  </form>
+</div>
+
+<br><br>
+
+<div [hidden]="!submitted">
+  <table class="table table-hover table-striped table-bordered">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">Field Name</th>
+      <th scope="col">Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Name</td>
+      <td>{{studentDetails.name}}</td>
+    </tr>
+    <tr>
+      <td>Age</td>
+      <td>{{studentDetails.age}}</td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>{{studentDetails.email}}</td>
+    </tr>
+    <tr>
+      <td>Username</td>
+      <td>{{studentDetails.username}}</td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td>{{studentDetails.password}}</td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td>{{studentDetails.gender}}</td>
+    </tr>
+    </tbody>
+  </table>
+  <br>
+  <div class="row">
+    <div class="col-xs-3 notice notice-warning">{{ registerForm.value | json}}</div>
+    <div class="col-xs-9 pull-left notice notice-warning">{{ registerForm.status | json }}</div>
+  </div>
+  <br>
+  <button type="button" (click)="submitted = false" class="btn btn-warning">
+    Edit Values
+  </button>
+</div>
+<br>

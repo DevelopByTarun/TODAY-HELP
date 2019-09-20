@@ -1,0 +1,12 @@
+<h2 [class]="head">{{title}}</h2>
+<br/>
+<button type="button" (click)="showValid()" class="btn btn-primary btn-lg">True</button>
+<br/><br/>
+<button type="button" (click)="showInvalid()" class="btn btn-danger btn-lg">False</button>
+<br/><br/>
+<div *ngIf="isValid" class="valid">
+  <h3>Data Is Valid....</h3>
+</div>
+<div *ngIf="!isValid" class="inValid">
+  <h3>Data Is Invalid....</h3>
+</div>

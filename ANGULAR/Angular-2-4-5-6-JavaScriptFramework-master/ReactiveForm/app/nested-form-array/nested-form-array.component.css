@@ -1,0 +1,51 @@
+/* textbox animation */
+input[type=text] {
+    width: 650px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+input[type=text]:focus {
+    width: 100%;
+}
+input[type=password] {
+    width: 650px;      
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+input[type=password]:focus {
+    width: 100%;
+}
+input[type=email] {
+    width: 650px;      
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+input[type=email]:focus {
+    width: 100%;
+}
+.notice {
+    padding: 10px;
+    background-color: #fafafa;
+    border-left: 6px solid #7f7f84;
+    margin-bottom: 10px;
+    -webkit-box-shadow: 0 5px 8px -6px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 5px 8px -6px rgba(0, 0, 0, .2);
+    box-shadow: 0 5px 8px -6px rgba(0, 0, 0, .2);
+}
+.notice-danger {
+    border-color: #d73814;
+}
+.notice-warning {
+    border-color: yellow;
+}
+.notice-info {
+    border-color: blue;
+}
+h2 {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: oblique;
+}
+#bt1 {
+    margin-left: 190px;
+}

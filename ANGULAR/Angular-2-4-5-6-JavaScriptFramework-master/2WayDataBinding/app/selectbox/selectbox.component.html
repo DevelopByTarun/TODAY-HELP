@@ -1,0 +1,14 @@
+<h2>{{myTitle}}</h2>
+<br/>
+<div class="form-group">
+  <label for="sl"><h4>Please Select Your Color ::&nbsp;</h4></label>&nbsp;&nbsp;
+  <select class="form-control" id="sl" [(ngModel)]="selectedColor">
+    <option *ngFor="let colory of myColorsArray">
+      {{colory}}
+    </option>
+  </select>
+</div>
+<br/>
+<h3 [style.color]="selectedColor">
+<strong>Select The Color To See The Effect</strong>
+</h3>

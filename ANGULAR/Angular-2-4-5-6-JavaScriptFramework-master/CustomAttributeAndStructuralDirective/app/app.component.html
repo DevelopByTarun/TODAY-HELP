@@ -1,0 +1,18 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <br>
+      <h1 [style.text-align]="!myText? 'right':'center'">
+        {{title}}
+      </h1>
+      <br>
+      <app-custom-attribute-directive-usage [prop1]="subtitle1"></app-custom-attribute-directive-usage>
+      <br>
+      <hr>
+      <br>
+      <app-custom-structural-directive-usage [prop1]="subtitle2"></app-custom-structural-directive-usage>
+      <br>
+    </div>
+  </div>
+</div>

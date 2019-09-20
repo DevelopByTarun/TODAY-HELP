@@ -1,0 +1,33 @@
+<h2 [style.color]="isColor? 'red' : 'blue'">{{head}}</h2>
+<br/><br/>
+<form>
+  <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>First Number&nbsp;::</strong></label>
+    <div class="col-sm-10">
+      <input type="text" (input)="takeFirstNumber($event)" class="form-control" id="inputEmail3" placeholder="Type Here">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-2 col-form-label"><strong>Second Number&nbsp;::</strong></label>
+    <div class="col-sm-10">
+      <input type="text" (input)="takeSecondNumber($event)" class="form-control" id="inputPassword3" placeholder="Type Here">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-2 col-form-label"></label>
+    <div class="col-sm-10">
+      <button type="submit" (click)="passValueToParentForAddition()" class="btn btn-primary">Addition</button>&nbsp;
+      <button type="submit" (click)="passValueToParentForSubtraction()" class="btn btn-warning">Subtraction</button>&nbsp;
+      <button type="submit" (click)="passValueToParentForMultiplication()" class="btn btn-danger">Multiplication</button>&nbsp;
+      <button type="submit" (click)="passValueToParentForDivision()" class="btn btn-dark">Division</button>&nbsp;
+      <button type="reset" class="btn btn-info">Clear</button>
+    </div>
+  </div>
+</form>
+<br/><br/>
+<h4 class="alert alert-warning" role="alert">
+  Value Of First Number Is ::&nbsp;{{calc.firstNumber}}
+</h4><br/>
+<h4 class="alert alert-danger" role="alert">
+  Value Of Second Number Is ::&nbsp;{{calc.secondNumber}}
+</h4><br/>

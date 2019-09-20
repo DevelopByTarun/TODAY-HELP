@@ -1,0 +1,15 @@
+
+.apply {
+  font-family: YuMincho;
+  font-weight: bolder;
+}
+
+.error1 {
+  font-size: 15px;
+  font-family: monospace;
+}
+
+.error2 {
+  color: red;
+  font-weight: bold;
+}

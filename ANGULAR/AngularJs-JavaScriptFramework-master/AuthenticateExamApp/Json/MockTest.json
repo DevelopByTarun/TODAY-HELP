@@ -1,0 +1,36 @@
+[
+    {
+        "question": "1. Which directive is used for data binding in AngularJS ?",
+        "options": ["ng-data", "ng-app", "ng-bind", "ng-controller"],
+        "answer": 2,
+        "Count": 1
+   },
+
+    {
+        "question": "2. AngularJS expressions are written using ?",
+        "options": ["Double braces like {{ expression}}", "Single braces like {expression}", "Small bracket like (expression)", "Capital bracket like [expression]"],
+        "answer": 4,
+        "Count": 2
+   },
+
+    {
+        "question": "3. Which components can be injected as a dependency in AngularJS ?",
+        "options": ["Value", "Factory", "Service", "All of the above"],
+        "answer": 2,
+        "Count": 3
+   },
+
+    {
+        "question": "4. On which of the following types of component can we create a custom directive ?",
+        "options": ["Element directives", "Attribute", "Css", "All of the above"],
+        "answer": 4,
+        "Count": 4
+   },
+
+    {
+        "question": "5. Which of the following is true about $error ?",
+        "options": ["$error states that form has invalid data", "$error states the exact error", "Both of the above", "None of the above"],
+        "answer": 1,
+        "Count": 5
+    }
+]

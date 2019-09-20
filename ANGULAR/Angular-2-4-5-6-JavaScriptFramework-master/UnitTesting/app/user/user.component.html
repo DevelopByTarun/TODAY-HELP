@@ -1,0 +1,14 @@
+<div *ngIf="isLoggedIn" class="alert alert-dark" role="alert">
+  <h1 class="alert-heading">User Logged In</h1>
+  <hr>
+  <p class="mb-0">{{user.name}}</p>
+</div>
+
+<div *ngIf="!isLoggedIn" class="alert alert-info" role="alert">
+  <h1 class="alert-heading">User Not Logged In</h1>
+  <hr>
+  <p class="mb-0">Please Logged In First</p>
+</div>
+<button type="button" id="bt" (click)="update($event)" class="btn btn-dark btn-md">
+  CallUpdateMethod
+</button>

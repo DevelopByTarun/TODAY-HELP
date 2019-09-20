@@ -1,0 +1,23 @@
+ <h2 [class.t2]="!isReq">
+        {{title2}}
+ </h2>
+ <br/>
+<label>Enter First Name&nbsp;</label>
+<input type="text" [(ngModel)]="message" class="form-control"/>
+<br/>
+<label>Enter Last Name&nbsp;</label>
+<input type="text" bindon-ngModel="message" class="form-control"/>
+<br/>
+<p [style.font-size.px]="!isSize ? small : big">{{message}}</p>
+<br/>
+<br/>
+<label>Enter First Number&nbsp;</label>
+<input type="number" (input)="takeInput($event)" class="form-control"/>
+<br/>
+<label>Enter Second Number&nbsp;</label>
+<input type="number" [value]="secondNo" on-input="secondNo=$event.target.value" class="form-control"/>
+<br/>
+<p [style.font-size.px]="isSize ? small : big">
+First Number Is :: {{firstNo}}<br/>
+Second Number Is :: {{secondNo}}<br/>
+</p>

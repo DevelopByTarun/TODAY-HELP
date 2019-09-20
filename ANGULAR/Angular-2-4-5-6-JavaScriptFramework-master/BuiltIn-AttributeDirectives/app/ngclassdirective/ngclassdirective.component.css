@@ -1,0 +1,27 @@
+.one {
+    color: white;
+}
+
+.two {
+    background-color: black;
+}
+
+.blue {
+    color: blue;
+    text-transform: uppercase;
+    font-family: verdana;
+}
+.red {
+    color: red;
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+
+.compone {
+    text-transform: capitalize;
+}
+
+.comptwo {
+    font-family: arial;
+    font-size: 3em;
+}

@@ -1,0 +1,74 @@
+
+# AngularJs tools
+ 
+* For The Use Of AngularJs Tools We Install NodeJs With Npm (Node Package Manager) And Git 
+* First To Install Git :- https://git-scm.com/download/mac , Check git version :- git - - version 
+* Second To Install NodeJs + Npm :- https://nodejs.org/en/ , Check NodeJs version :- node -v , Check Npm version :- npm -v  
+
+# Bower : Package Manager For Web [Client Side Dependency] 
+
+* First To Install Bower :- sudo npm install bower -g (g == Globally) , Check bower version :- bower -v  
+* Second Initialise Bower :- Create NewFolder > bower init (file name bower.json save in NewFolder automatically)  
+* Third To install angular dependency Package :- bower install angular - -save  
+* Fourth To install bootstrap dependency Package :- bower install bootstrap - -save  
+* Fifth To install css animation dependency Package :- bower install animate.css - -save  
+* Sixth For Any Information Or Documentation :- https://bower.io/  
+* Seventh Bower.json File Is There Then You Will Only Do :- bower install or install bower
+* To install ngstorage dependency package :- bower install ngstorage - -save 
+ 
+# Grunt : Task Runner [Server Side Dependency]
+ 
+* First To Install Grunt :- sudo npm install grunt-cli -g (g == Globally)   
+* Second Initialise Npm :- Create NewFolder > npm init (file name package.json save in NewFolder automatically)  
+* Third To Install Grunt Dev Mode In New Folder :- sudo npm install grunt - -save-dev (dev == Developer)  
+* Fourth :- Third Command Automatically And Locally Create Node Modules Folder And package lock.json in NewFolder  
+* Fifth To Install Different Plugin :- https://gruntjs.com/plugins  
+* Sixth To Install Grunt-Contrib-Cssmin Plugin :- npm install grunt-contrib-cssmin --save-dev   
+* Seventh To Install Grunt-Contrib-Uglify Plugin :- npm install grunt-contrib-uglify --save-dev  
+* Eight To Install Grunt-Contrib-Watch Plugin :- npm install grunt-contrib-watch --save-dev  
+* Ninth To Install Grunt-Contrib-Clean Plugin :- npm install grunt-contrib-clean --save-dev  
+* Tenth Create grunt.js File In NewFolder  
+* Eleventh To Run Grunt File :- grunt  
+* Twelfth package.json and grunt.js Is There You Will Only Do :- npm install (For Dependency) And Run Grunt File (grunt)  
+ 
+# Jasmine To Karma
+ 
+* First :- Jasmine Is For Unit Testing  
+* Second :- Karma Is For Integration Testing, Cross Browser Testing And Auto Runner  
+* Third :- Mock Ups Are Defined As Angular Fake Objects For Testing  
+* Fourth :- Grunt Trigger Karma And Karma Trigger Bower  
+* Fifth Initialise Npm :- Create NewFolder > npm init (file name package.json save in NewFolder automatically)  
+* Sixth To Install Jasmine :- sudo npm install jasmine-core - -save   
+* Seventh To Install Karma :- sudo npm install karma-cli -g (g == Globally)  
+* Eighth To Install Karma Dev Mode :- sudo npm install karma - -save-dev  
+* Ninth :- This Installation Will Install Karma Locally And Create Node Modules Folder In Current Directory  
+* Tenth To Install Karma And Jasmine Together In Dev Mode :- sudo npm install karma-jasmine - -save-dev (dev == Developer)  
+* Eleventh To Initialise Karma :- karma init  
+* Twelfth To Initialise Bower :- bower init  
+* Thirteenth To Install Angular Mock Dependency Package :- bower install angular-mock - -save-dev (dev == Developer)  
+* Fourteenth To install angular dependency Package :- bower install angular - -save 
+ 
+# Grunt To Karma (combined testing after jasmine karma)
+ 
+* goto https://gruntjs.com   
+* grunt-karma plugin  
+* npm install grunt - -save-dev   
+* npm install grunt-karma - -save-dev   
+* create gruntfile.js   
+* grunt karma  
+ 
+# Yeoman
+ 
+* http://yeoman.io/ web tool is also like template (angular generator readme)   
+* sudo npm install yo -g   
+* goto discovering generator option   
+* download angular (angular)   
+* sudo npm install -g generator-karma generator-angular   
+* create blank folder   
+* yo angular (ask question) > spacebar for select option > module > route   
+* grunt serve (to start application)   
+* ctrl +c after stop we will create new files   
+* yo angular:route profile (for create new route)   
+* yo angular:factory myfactory (for create new factory)   
+* yo angular:filter myfilter(filter name)   
+* yo angular:controller myCtrl(ctrl name) 

@@ -1,0 +1,22 @@
+
+<h2>
+  {{myHead}}
+</h2>
+<br>
+<strong><h4>Message Change Logs</h4></strong>
+<ul style="list-style-type: disc">
+  <li *ngFor="let msgLog of allMsgChangeLogs">
+    <div class="alert alert-info">
+    	{{msgLog}}
+    </div>
+  </li>
+</ul>
+<br>
+<strong><h4>Employee Change Logs</h4></strong>
+<ul style="list-style-type: disc">
+  <li *ngFor="let empLog of allEmployeeObjectChangeLogs">
+    <div class="alert alert-warning">
+      {{empLog}}
+    </div>
+  </li>
+</ul>

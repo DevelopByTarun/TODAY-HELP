@@ -1,0 +1,58 @@
+<h1>{{myProp1 | lowercase }}</h1>
+<br>
+<h2>{{myProp2}}</h2>
+<div class="alert alert-warning">
+  <h3>{{name | portion:1:8 }}</h3>
+</div>
+<br><br>
+<h2>{{myProp3}}</h2>
+<br>
+<div class="form-group row">
+  <label class="col-sm-2 col-form-label"><h5>Power&nbsp;::</h5></label>
+  <div class="col-sm-10">
+    <input type="text" [(ngModel)]="power" class="form-control" placeholder="Enter Power">
+  </div>
+</div>
+<div class="form-group row">
+  <label class="col-sm-2 col-form-label"><h5>Factor&nbsp;::</h5></label>
+  <div class="col-sm-10">
+    <input type="text" [(ngModel)]="factor" class="form-control" placeholder="Enter Factor">
+  </div>
+</div>
+<div class="alert alert-info">
+  <h3>{{power | exponentialstrength: factor}}</h3>
+</div>
+<br><br>
+<h3>{{myProp4}}</h3>
+<br>
+<div class="alert alert-primary">
+  <h3>
+    <pre>
+      {{employee | myjson }}
+    </pre>
+  </h3>
+</div>
+<br>
+<div class="alert alert-success">
+  <h3>
+    <pre>
+      {{employee | myjson:0:'id,name'}}
+    </pre>
+  </h3>
+</div>
+<br>
+<div class="alert alert-dark">
+  <h3>
+    <pre>
+      {{employee | myjson:1:'id,age'}}
+    </pre>
+  </h3>
+</div>
+<br>
+<div class="alert alert-danger">
+  <h3>
+    <pre>
+      {{employee | myjson:2:'id,city'}}
+    </pre>
+  </h3>
+</div>

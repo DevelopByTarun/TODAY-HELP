@@ -1,0 +1,13 @@
+.one {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.two {
+  color: red;
+  font-family: "cursive";
+}
+
+.fonty {
+  font-family: "monospace";
+}

@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 [class]="appHeading">{{appTitle}}</h1>
+      <br/>
+        <app-inputevent bind-head="inputHeading" [title]="inputTitle"></app-inputevent>
+        <br/>
+        <hr/>
+        <br/>
+        <app-clickevent [head]="clickHeading" bind-title="clickTitle"></app-clickevent>
+        <br/>
+        <hr/>
+        <br/>
+        <app-changeevent head="{{changeHeading}}" title="{{changeTitle}}"></app-changeevent>
+        <br/>
+    </div>
+  </div>
+</div>

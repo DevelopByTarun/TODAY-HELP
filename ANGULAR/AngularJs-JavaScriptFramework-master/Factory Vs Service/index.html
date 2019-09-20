@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .active{
+            color: red;
+        }
+    </style>
+    <script src="angular.min.js"></script>
+    
+    <script>
+    var app = angular.module("myapp",[]);
+       app.value("PI",3.14);
+       app.constant("URL","myurl"); app.controller("myctrl",function($scope,myfactory,myservice,PI,URL){
+            $scope.factoryvalue = myfactory.x +" "+myfactory.y+ "Service "+myservice.x+" "+myservice.y+" PI "+PI+" URL "+URL;
+            myservice.doCalc();
+        });
+        
+        app.service("myservice",function(){
+            this.x = 100;
+            this.y = 200;
+            this.doCalc=function(){
+                console.log("Some Logic")
+            }
+        })
+        app.factory("myfactory",function(){
+            var object={
+                x:100,
+                y:200
+            };
+            return object;
+        })
+    </script>
+</head>
+<body ng-app="myapp" ng-controller="myctrl">
+   <input type="checkbox" ng-model="tickme">
+    <p ng-class="{active:100>20}">{{factoryvalue}}</p>
+</body>
+</html>

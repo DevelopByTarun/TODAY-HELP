@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<!--    <link rel="stylesheet" href="../AngularTools/Bower.io/bower_components/bootstrap/dist/css/bootstrap.min.css">-->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style>
+        ul li {
+            display: inline-block;
+            background-color: firebrick;
+            width: 200px;
+            height: 50px;
+            margin-right: 10px;
+            text-align: center;
+            position: relative;
+        }
+        
+        ul li a {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            margin-top: 10px;
+            margin-left: -18px;
+        }
+        
+        .d1 {
+            width: 100%;
+            height: 400px;
+            border: 2px solid black;
+        }
+    </style>
+<!--    <script src="../AngularTools/Bower.io/bower_components/angular/angular.min.js"></script>-->
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<!--    <script src="../AngularTools/Bower.io/bower_components/angular-route/angular-route.min.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12" ng-app="myApp">
+                <h1 class="text-center">SPA Test</h1>
+                <br>
+                <ul>
+                    <li><a ng-href="#/">Main</a></li>
+                    <li><a ng-href="#/home">Home</a></li>
+                    <li><a ng-href="#/news">News</a></li>
+                </ul>
+                <br>
+                <h2 class="text-justify">Click on the links.</h2>
+                <h2 class="text-justify">Note that each "view" has its own controller which each gives the "msg" variable a value.</h2>
+                <br>
+                <div class="d1" ng-view>
+                    //
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var app = angular.module("myApp", ["ngRoute"]);
+
+        app.config(($routeProvider, $locationProvider) => {
+            $locationProvider.hashPrefix('');
+            $routeProvider.when("/", {
+                    templateUrl: "test.htm"
+                })
+                .when("/home", {
+                    templateUrl: "Home.htm",
+                    controller: "homeCtrl"
+                })
+                .when("/news", {
+                    templateUrl: "News.htm",
+                    controller: "newsCtrl"
+                })
+            .otherwise({
+                template:"<h1>Error In Page</h1>",
+                redirectTo:"/"
+            });
+        });
+
+        app.controller("homeCtrl", function($scope) {
+            $scope.result1 = "This Page Is Belongs From Home.htm";
+        });
+        app.controller("newsCtrl", function($scope) {
+            $scope.result2 = "This Page Is Belongs From News.htm";
+        });
+    </script>
+</body>
+
+</html>

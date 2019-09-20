@@ -1,0 +1,20 @@
+<div>
+  <h2>{{myTitle}}</h2>
+<br/><br/>
+<ul>
+  <li *ngFor="let item of itemListFirst">
+    <h3 [ngStyle]="getMultipleStyles('one')">
+     {{item.id}}&nbsp;{{item.name}}&nbsp;{{item.price}}&nbsp;{{item.desc}}
+    </h3>
+  </li>
+</ul>
+<br/><br/>
+<ul>
+  <li *ngFor="let item of itemListSecond">
+    <h3 [ngStyle]="getMultipleStyles('two')">
+     {{item.id}}&nbsp;{{item.name}}&nbsp;{{item.price}}&nbsp;{{item.desc}}
+    </h3>
+  </li>
+</ul>
+<br/>
+</div>

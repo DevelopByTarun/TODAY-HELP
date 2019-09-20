@@ -1,0 +1,40 @@
+.div nav {
+    padding: 10px;
+}
+
+.div nav .fnt {
+    font-family: 'Vidaloka', serif;
+}
+
+.set ul li {
+    /* padding: 10px; */
+    font-family: 'Vidaloka', serif;
+    font-size: 1.3em;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.blue {
+    color: blue;
+}
+
+.orange {
+    color: orange;
+}
+
+.yellow {
+    color: yellow;
+}
+
+/* home  */
+
+.myStyle {
+    font-family: gothic;
+}
+

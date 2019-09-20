@@ -1,0 +1,25 @@
+.first {
+  text-align: center;
+  text-transform: uppercase;
+  background-color: black;
+}
+
+.second {
+  font-family: "Apple Chancery";
+  color: whitesmoke;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: black;
+}
+
+.fonty1 {
+  font-family: "Yuppy TC";
+}
+
+.fonty2 {
+  text-transform: capitalize;
+}
+
+.fonty3 {
+  font-family: monospace;
+}

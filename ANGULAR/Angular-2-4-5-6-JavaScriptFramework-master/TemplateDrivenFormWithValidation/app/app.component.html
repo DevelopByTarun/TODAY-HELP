@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <br>
+      <h1 [ngStyle]="getMultipleStyles('apply')">
+        {{title}}
+      </h1>
+      <br>
+      <app-template-driven-form [prop1]="subtitle1"></app-template-driven-form>
+      <br>
+      <hr>
+      <br>
+      <app-template-driven-form-validation [prop1]="subtitle2"></app-template-driven-form-validation>
+      <br>
+    </div>
+  </div>
+</div>

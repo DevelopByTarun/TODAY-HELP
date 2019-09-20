@@ -1,0 +1,65 @@
+
+
+<p [ngClass]="'first'" [@onOffButton]="state1" (click)="toggleState1()">
+  I Will Animate Click Me!!
+</p>
+<br><br>
+<form>
+  <div class="form-group row">
+    <label for="input1" class="col-sm-2 col-form-label"><h5>BookName&nbsp;::</h5></label>
+    <div class="col-sm-10">
+      <input type="text" [(ngModel)]="bookName" name="bookName" class="form-control" id="input1" placeholder="Type Here">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="input2" class="col-sm-2 col-form-label"><h5>BookState&nbsp;::</h5></label>
+    <div class="col-sm-10">
+      <input type="text" [(ngModel)]="bookState" name="bookState" class="form-control" id="input2" placeholder="Type Here">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label"></label>
+    <div class="col-sm-10">
+      <button type="submit" (click)="addBook()" class="btn btn-primary">Get Book</button>
+    </div>
+  </div>
+</form>
+<br>
+
+<!--for animation 1-->
+<!--<ul>-->
+<!--<li *ngFor="let book of bookList" [@onOffBook]="book.state" (click)="toggleBook(book)">-->
+<!--{{book.id}}&nbsp;{{book.name}}-->
+<!--</li>-->
+<!--</ul>-->
+
+<!--for animation 2-->
+<!--<ul>-->
+<!--<li *ngFor="let book2 of bookList" [@onOffBookTrigger]="book2.state" (click)="toggleBook2(book2)">-->
+<!--{{book2.id}}&nbsp;{{book2.name}}-->
+<!--</li>-->
+<!--</ul>-->
+
+<!--for animation 3-->
+<!--<ul>-->
+<!--<li *ngFor="let book3 of bookList" [@onOffAnimation]="book3.state" (click)="toggleBookWithKeyFrames(book3)">-->
+<!--{{book3.id}}&nbsp;{{book3.name}}-->
+<!--</li>-->
+<!--</ul>-->
+
+<!--for rotate animation-->
+<ul>
+  <li *ngFor="let book4 of bookList" [@rotateBookName]="book4.state" (click)="toggleBookWithRotateAndKeyframes(book4)">
+    {{book4.id}}&nbsp;{{book4.name}}
+  </li>
+</ul>
+
+<br><br>
+<p [ngClass]="'anim'" [@myShowHide]="showhidestate">
+  I Will Animate And Present Show And Hide Feature
+</p>
+<br>
+<button type="button" class="btn btn-danger" (click)="toggleShowHide()">Toggle Show And Hide</button>
+
+
+

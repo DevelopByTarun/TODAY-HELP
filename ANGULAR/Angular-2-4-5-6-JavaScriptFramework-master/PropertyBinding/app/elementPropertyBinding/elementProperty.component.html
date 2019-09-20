@@ -1,0 +1,35 @@
+
+<h2 [textContent]="website1.name" [class]="styles2"></h2>
+<h3>
+  <a [href]="website1.url">url print through bracket</a>
+</h3>
+<img [src]="website1.logo"/>
+<h4>
+  <p [textContent]="website1.description"></p>
+</h4>
+<button [disabled]="flag1">Element Property</button>
+
+<br/>
+
+<h2 bind-textContent="website2.name" bind-class="styles2"></h2>
+<h3>
+  <a bind-href="website2.url">url print through bind-</a>
+</h3>
+<img bind-src="website2.logo"/>
+<h4>
+  <p bind-textContent="website2.description"></p>
+</h4>
+<button bind-disabled="flag2">Element Property</button>
+
+<br/>
+
+<h2 textContent="{{website3.name}}" class="{{styles2}}"></h2>
+<h3>
+  <a href="{{website3.url}}">url print through interpolation</a>
+</h3>
+<img src="{{website3.logo}}"/>
+<h4>
+  <p textContent="{{website3.description}}"></p>
+</h4>
+
+

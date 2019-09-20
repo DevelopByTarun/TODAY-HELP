@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Css/Stylesheet.css" />
+<!--    <link rel="stylesheet" href="../../../Library/bootstrap/css/bootstrap.min.css" />-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!--    <script src="../../../Library/Angularjs/angular.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <script src="../Js/App.js"></script>
+    <script src="../Js/Model.js"></script>
+    <script src="../Js/Controller.js"></script>
+</head>
+
+<body ng-app="ShopApp" ng-controller="ShopController">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12">
+                <header>
+                    <nav class="navbar navbar-inverse">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <a class="navbar-brand" href="#"><img src="../Images/youtube.png" alt="img"></a>
+                            </div>
+                            <ul class="nav navbar-nav">
+                                <li class="active" ng-repeat="m in menu">
+                                    <a href="#">&nbsp;{{m.hm}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{m.abt}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{m.lnk}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{m.lg}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{m.sg}}</a>
+                                </li>
+                            </ul>
+                            <form class="navbar-form navbar-right">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-default" type="submit">
+                                            <i class="glyphicon glyphicon-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div id="sidebar-wrapper" class="">
+                    <nav id="spy">
+                        <ul class="sidebar-nav nav">
+                            <li class="sidebar-brand active"> <a href="#home" class=""><span class="fa fa-home solo">Products</span></a>
+
+                            </li>
+                            <li class="">
+                                <a href="#" data-scroll="" class="" ng-click="getShoes()">
+                                    <span class="fa fa-anchor solo">Shoes</span>
+                                </a>
+
+                            </li>
+<!--
+                            <li class="">
+                                <a href="#anch2" data-scroll="" class="">
+                                    <span class="fa fa-anchor solo">Mobile</span>
+                                </a>
+
+                            </li>
+                            <li class="">
+                                <a href="#anch3" data-scroll="" class="">
+                                    <span class="fa fa-anchor solo">Clothes</span>
+                                </a>
+
+                            </li>
+                            <li class="">
+                                <a href="#anch4" data-scroll="" class="">
+                                    <span class="fa fa-anchor solo">Watches</span>
+                                </a>
+
+                            </li>
+-->
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div id="showData">
+                    <div class="shoes">
+                        <ul ng-repeat="i in sh" class="list-unstyled">
+                            <li>{{i.id}}</li><br>
+                            <li><img src="{{i.image}}" alt="img"></li><br>
+                            <li>{{i.title}}</li><br>
+                            <li>{{i.sub}}</li><br>
+                            <li>{{i.auth}}</li><br>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

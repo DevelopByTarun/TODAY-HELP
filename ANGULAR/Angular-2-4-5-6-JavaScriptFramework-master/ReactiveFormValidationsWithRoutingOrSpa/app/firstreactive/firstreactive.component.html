@@ -1,0 +1,87 @@
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <h1>
+      First Reactive Form With Validation
+    </h1>
+    <br>
+    <form class="form-horizontal" [formGroup]="firstForm" (ngSubmit)="doSubmit($event)">
+      <div class="form-group">
+        <label for="u" class="col-sm-2 control-label">Userid ::</label>
+        <div class="col-sm-10">
+          <input type="text" formControlName="uid" class="form-control" id="u" placeholder="Enter Userid">
+          <span style="color:red;" *ngIf="firstForm.get('uid').invalid && firstForm.get('uid').pristine && firstForm.get('uid').touched">
+            <strong>Userid Can't Be Blank</strong>
+          </span>
+          <span style="color:red;" *ngIf="firstForm.get('uid').invalid && firstForm.get('uid').touched && firstForm.get('uid').dirty">
+            <strong>Invalid Userid</strong>
+          </span>
+        </div>
+      </div>
+      <div formGroupName="password">
+        <div class="form-group">
+          <label for="p" class="col-sm-2 control-label">Password ::</label>
+          <div class="col-sm-10">
+            <input type="password" formControlName="pwd" class="form-control" id="p" placeholder="Enter Password">
+            <span style="color:red;" *ngIf="!firstForm.get('password.pwd').valid && firstForm.get('password.pwd').touched">
+              <strong>Password Can't Be Blank</strong>
+              <br>
+            </span>
+            <span style="color:red;" *ngIf="firstForm.get('password.pwd').errors['blackListed']">
+              <strong>Invalid Password</strong>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Address ::</label>
+        <div class="col-sm-offset-2 col-sm-10" formArrayName="address">
+          <button type="submit" (click)="addAddress($event)" class="btn btn-warning btn-md">Click It....</button>
+          <ul class="demo">
+            <li *ngFor="let addr of firstForm.get('address').controls; let i=index">
+              <input type="text" [formControlName]="i" placeholder="Enter Address" class="form-control">
+              <span style="color:red;" *ngIf="!firstForm.get('address').controls[i].valid && firstForm.get('address').controls[i].touched">
+                <strong>Address Can't Be Blank</strong>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-success btn-md">Sign in</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-xs-3 notice notice-danger">Userid ::</div>
+    <div class="col-xs-9  pull-left notice notice-danger">{{ firstForm.get('uid').value }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3 notice notice-warning">Password ::</div>
+    <div class="col-xs-9 pull-left notice notice-warning">{{ firstForm.get('password.pwd').value }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3 notice notice-info">Address ::</div>
+    <div class="col-xs-9 pull-left notice notice-info">{{ firstForm.get('address').value }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3 notice notice-success">Form Values :: {{ firstForm.value | json}}</div>
+    <div class="col-xs-9 pull-left notice notice-success">Form Status :: {{ firstForm.status | json }}</div>
+  </div>
+</div>
+
+<!-- States of a field
+1. $touched - field has been touched (blur focusout)
+2. $untouched - field not touched
+3. $pristine - no modification
+4. $dirty - modified
+5. $invalid - field is invalid
+6. $valid- field is valid -->

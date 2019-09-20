@@ -1,0 +1,104 @@
+<h2>{{head}}</h2>
+<br/><br/>
+<form>
+  <div class="form-group row">
+    <label for="inputEmail1" class="col-sm-2 col-form-label"><h5><strong>UserId&nbsp;::</strong></h5></label>
+    <div class="col-sm-10">
+      <input type="text" #uid class="form-control" id="inputEmail1" placeholder="Enter UserId">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="inputEmail2" class="col-sm-2 col-form-label"><h5><strong>Password&nbsp;::</strong></h5></label>
+    <div class="col-sm-10">
+      <input type="password" #pwd class="form-control" id="inputEmail2" placeholder="Enter Password">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label"><h5><strong>MobileNo&nbsp;::</strong></h5></label>
+    <div class="col-sm-10">
+      <input type="number" #mno class="form-control" id="inputEmail3" placeholder="Enter MobileNo">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="inputEmail4" class="col-sm-2 col-form-label"><h5><strong>Email&nbsp;::</strong></h5></label>
+    <div class="col-sm-10">
+      <input type="email" #emal class="form-control" id="inputEmail4" placeholder="Enter Email">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="inputEmail4" class="col-sm-2 col-form-label"></label>
+    <div class="col-sm-10">
+      <button type="submit" (click)="getDataThroughTemplateReference(uid.value, pwd.value, mno.value, emal.value)" class="btn btn-warning">
+        Get Data Through Template Reference Variable
+      </button>
+    </div>
+  </div>
+</form>
+<br/><br/>
+<form>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label"><h4>Select Color ::&nbsp;</h4></label>
+    <div class="col-sm-10">
+      <select #selectColor (change)="getSelectedColor(selectColor.value)" class="form-control">
+        <option *ngFor="let coly of colory">
+          {{coly}}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label"><h4>UserId ::&nbsp;</h4></label>
+    <div class="col-sm-10">
+      <h4 [style.color]="selectColor.value">{{uid.value}}</h4>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label"><h4>Password ::&nbsp;</h4></label>
+    <div class="col-sm-10">
+      <h4 [style.color]="selectColor.value">{{pwd.value}}</h4>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label"><h4>MobileNo ::&nbsp;</h4></label>
+    <div class="col-sm-10">
+      <h4 [style.color]="selectColor.value">{{mno.value}}</h4>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label"><h4>Email ::&nbsp;</h4></label>
+    <div class="col-sm-10">
+      <h4 [style.color]="selectColor.value">{{emal.value}}</h4>
+    </div>
+  </div>
+</form>
+
+<!--<ul>-->
+  <!--<li>-->
+    <!--<h4 [style.color]="selectColor.value">UserId Value ::&nbsp;{{uid.value}}</h4>-->
+    <!--<h4>UserId Type ::&nbsp;{{uid.type}}</h4>-->
+    <!--<h4>UserId Placeholder ::&nbsp;{{uid.placeholder}}</h4><br>-->
+  <!--</li>-->
+  <!--<li>-->
+    <!--<h4 [style.color]="selectColor.value">Password Value ::&nbsp;{{pwd.value}}</h4>-->
+    <!--<h4>Password Type ::&nbsp;{{pwd.type}}</h4>-->
+    <!--<h4>Password Placeholder ::&nbsp;{{pwd.placeholder}}</h4><br>-->
+  <!--</li>-->
+  <!--<li>-->
+    <!--<h4 [style.color]="selectColor.value">MobileNo Value ::&nbsp;{{mno.value}}</h4>-->
+    <!--<h4>MobileNo Type ::&nbsp;{{mno.type}}</h4>-->
+    <!--<h4>MobileNo Placeholder ::&nbsp;{{mno.placeholder}}</h4><br>-->
+  <!--</li>-->
+  <!--<li>-->
+    <!--<h4 [style.color]="selectColor.value">Email Value ::&nbsp;{{emal.value}}</h4>-->
+    <!--<h4>Email Type ::&nbsp;{{emal.type}}</h4>-->
+    <!--<h4>Email Placeholder ::&nbsp;{{emal.placeholder}}</h4>-->
+  <!--</li>-->
+<!--</ul>-->

@@ -1,0 +1,8 @@
+<h2 [style.color]="!isColor? 'red' : 'blue'">{{head}}</h2>
+<br/><br/>
+<div class="form-group row">
+  <div class="col-sm-10">
+    <button type="submit" (click)="passValueToParentForIncrement()" class="btn btn-danger">For Increment</button>&nbsp;
+    <button type="submit" (click)="passValueToParentForDecrement()" class="btn btn-dark">For Decrement</button>&nbsp;
+  </div>
+</div>

@@ -1,0 +1,137 @@
+<h2 [ngClass]="getMultipleCssClasses('reject')">
+  {{myProp1}}
+</h2>
+<br>
+<form>
+  <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label"><h5>SearchValue&nbsp;::</h5></label>
+    <div class="col-sm-10">
+      <input type="text" (input)="takeSearchValue($event)" class="form-control" id="inputEmail3" placeholder="Name Of The Image">
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" (click)="callSearchImageService()" class="btn btn-primary">Get Images From Giphy</button>
+    </div>
+  </div>
+</form>
+<br>
+<ul style="list-style-type: none">
+  <li *ngFor="let im of imagesList">
+    <img [src]="im.images.original.url" alt="ImageNotFound">
+    <h5>{{im.id}}</h5>
+    <h6>{{im.type}}</h6>
+    <h6>{{im.url}}</h6>
+    <br>
+  </li>
+</ul>
+<br>
+<hr>
+<br>
+<h2 [ngClass]="getMultipleCssClasses('resolves')">
+  {{myProp2}}
+</h2>
+<br>
+<div class="form-group row">
+  <div class="col-sm-10">
+    <button type="submit" (click)="callSearchBooksServiceMethodGetAllBooks()" class="btn btn-info">Get All Books From Server</button>
+  </div>
+</div>
+<br>
+<table class="table table-striped table-bordered">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Name</th>
+    <th scope="col">Category</th>
+    <th scope="col">Writer</th>
+    <th scope="col">year</th>
+    <th scope="col">Image</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let book of booksList">
+    <td>
+      <h5>{{book.id}}</h5>
+    </td>
+    <td>
+      <h5>{{book.name}}</h5>
+    </td>
+    <td>
+      <h5>{{book.category}}</h5>
+    </td>
+    <td>
+      <h5>{{book.writer}}</h5>
+    </td>
+    <td>
+      <h5>{{book.year}}</h5>
+    </td>
+    <td>
+      <img src="{{book.url}}" alt="ImageNotFound">
+    </td>
+  </tr>
+  </tbody>
+</table>
+<br>
+<hr>
+<br>
+<h2 [style.font-family]="isFonty ? 'monospaced':'serif'" [style.color]="myColor > 10 ? 'orange':'brown'">
+  {{myProp4}}
+</h2>
+<br>
+<form>
+  <div class="form-group row">
+    <label for="input11" class="col-sm-2 col-form-label"><h5>SearchCategory&nbsp;::</h5></label>
+    <div class="col-sm-10">
+      <input type="text" (input)="takeCategory($event)" class="form-control" id="input11" placeholder="Enter Category">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="input12" class="col-sm-2 col-form-label"><h5>SearchYear&nbsp;::</h5></label>
+    <div class="col-sm-10">
+      <input type="text" (input)="takeYear($event)" class="form-control" id="input12" placeholder="Enter Year">
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" (click)="callSearchBooksServiceMethodFilterBooksByCategoryAndyear()" class="btn btn-success">
+        Get Category And Year From Server
+      </button>
+    </div>
+  </div>
+</form>
+<br>
+<table class="table table-striped table-bordered">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Name</th>
+    <th scope="col">Category</th>
+    <th scope="col">Writer</th>
+    <th scope="col">year</th>
+    <th scope="col">Image</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let bookie of booking">
+    <td>
+      <h5>{{bookie.id}}</h5>
+    </td>
+    <td>
+      <h5>{{bookie.name}}</h5>
+    </td>
+    <td>
+      <h5>{{bookie.category}}</h5>
+    </td>
+    <td>
+      <h5>{{bookie.writer}}</h5>
+    </td>
+    <td>
+      <h5>{{bookie.year}}</h5>
+    </td>
+    <td>
+      <img src="{{bookie.url}}" alt="ImageNotFound">
+    </td>
+  </tr>
+  </tbody>
+</table>

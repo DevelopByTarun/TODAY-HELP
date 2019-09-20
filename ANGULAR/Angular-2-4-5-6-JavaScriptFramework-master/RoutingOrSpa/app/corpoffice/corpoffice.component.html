@@ -1,0 +1,27 @@
+<br/>
+<h1 [ngClass]="'one two'">{{title}}</h1>
+<br/>
+<div class="btn-group">
+  <button type="button" (click)="getCorporateOfficeRouteParam()" class="btn btn-success btn-lg">Get Route Params</button>
+</div>
+<br/><br/>
+<div class="fonty">
+  <ul class="list-group" [class]="isOk ? 'red': 'blue'">
+    <li class="list-group-item"><h4>Office Area ::&nbsp;{{area}}</h4></li>
+    <li class="list-group-item"><h4>Office State ::&nbsp;{{state}}</h4></li>
+    <li class="list-group-item"><h4>Office Country ::&nbsp;{{country}}</h4></li>
+    <li class="list-group-item"><h4>Office Pincode ::&nbsp;{{pincode}}</h4></li>
+  </ul>
+</div>
+<br/><br/>
+<div class="form-group">
+  <label for="ids" class="col-sm-2 control-label"><strong>SetData For Service&nbsp;::</strong></label>
+  <div class="col-sm-10">
+    <input type="text" (input)="takeInput($event)" class="form-control" id="ids" placeholder="Enter Text Send To Office">
+  </div>
+</div>
+<br/>
+<div class="btn-group">
+  <button type="button" (click)="setServiceData()" class="btn btn-warning btn-lg">Call SetData Of DataService</button>
+</div>
+<br/><br/>

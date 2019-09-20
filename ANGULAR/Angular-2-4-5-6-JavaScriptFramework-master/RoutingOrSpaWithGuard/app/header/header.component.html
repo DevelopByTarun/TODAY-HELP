@@ -1,0 +1,12 @@
+<ul>
+  <li><a [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" [routerLink]="homeLink">Home</a></li>
+  <li><a routerLinkActive="active" routerLink="shoes">Shoes</a>
+  <ul>
+    <li>
+      <a routerLinkActive="active" routerLink="runshoes">RunnerShoes</a>
+    </li>
+  </ul>
+  </li>
+  <li><a routerLinkActive="active" routerLink="mobiles">Mobiles</a></li>
+  <li><button class="btn btn-success btn-sm" (click)="loadShoes($event)">Load Runner Shoes By Code Way</button></li>
+</ul>

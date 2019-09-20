@@ -1,0 +1,15 @@
+.hide {
+    border: 4px solid brown;
+}
+
+.red {
+    color: red;
+    font-family: verdana;
+    text-transform: capitalize;
+}
+
+.blue {
+    color: blue;
+    font-family: arial;
+    text-transform: capitalize;
+}

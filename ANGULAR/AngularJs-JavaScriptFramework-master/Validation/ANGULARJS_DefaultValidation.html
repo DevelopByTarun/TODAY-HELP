@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation</title>
+<!--    <link rel="stylesheet" href="../AngularTools/Bower.io/bower_components/bootstrap/dist/css/bootstrap.min.css"/>-->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script>
+        // app.js
+        var app = angular.module("validApp", []);
+        
+        // controller.js
+        app.controller("validCtrl", ($scope) => {
+            $scope.reset = () => {
+                $scope.uid = "";
+                $scope.pwd = "";
+                $scope.emal = "";
+            }
+            $scope.submit = (isvalid) => {
+                if (isvalid) {
+                    alert('You Have Successfully Submit The Form');
+                } else {
+                    alert('Unable To Submit The Form');
+                }
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <!--
+States of a field
+1. $touched - field has been touched (blur focusout)
+2. $untouched - field not touched
+3. $pristine - no modification
+4. $dirty - modified
+5. $invalid - field is invalid
+6. $valid- field is valid
+-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center">AngularJs Validation</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" ng-app="validApp" ng-controller="validCtrl">
+                <form name="stud" novalidate>
+                    <table cellpadding="6px" width="100%" class="table">
+                        <tr>
+                            <td>
+                                <label for="">Userid ::</label>
+                            </td>
+                            <td>
+                                <input type="text" name="uid" ng-model="uid" placeholder="Enter Userid" pattern="[a-z]{4,10}[0-9]{2,6}" required>
+                                <span style="color:red;" ng-show="stud.uid.$dirty && stud.uid.$invalid">
+                                <span ng-show="stud.uid.$error.required">
+                                    Userid Is Required!!
+                                </span>
+                                <span ng-show="stud.uid.$error.pattern">
+                                    Invalid Userid!!
+                                </span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="">Password ::</label>
+                            </td>
+                            <td>
+                                <input type="password" name="pwd" ng-model="pwd" placeholder="Enter Password" pattern="[A-Z]{4,10}[0-9]{2,6}" required>
+                                <span style="color:red;" ng-show="stud.pwd.$dirty && stud.pwd.$invalid">
+                                <span ng-show="stud.pwd.$error.required">
+                                    Password Is Required!!
+                                </span>
+                                <span ng-show="stud.pwd.$error.pattern">
+                                    Invalid Password!!
+                                </span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="">Email ::</label>
+                            </td>
+                            <td>
+<!--                               A form with an email field that that must be in the following order: characters@characters.domain (characters followed by an @ sign, followed by more characters, and then a ".". After the "." sign, you can only write 2 to 3 letters from a to z:-->
+                               
+                                <input type="email" name="emal" ng-model="emal" placeholder="Enter Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+                                <span style="color:red;" ng-show="stud.emal.$dirty && stud.emal.$invalid && stud.emal.$touched">
+                                <span ng-show="stud.emal.$error.required">
+                                    Email Is Required!!
+                                </span>
+                                <span ng-show="stud.emal.$error.email">
+                                    Invalid Email Address!!
+                                </span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="reset" ng-click="reset()" class="btn btn-success btn-lg" width="100%">Reset</button>
+                            </td>
+                            <td>
+                                <button type="submit" ng-click="submit(stud.$valid)" class="btn btn-warning btn-lg" width="100%">Submit</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

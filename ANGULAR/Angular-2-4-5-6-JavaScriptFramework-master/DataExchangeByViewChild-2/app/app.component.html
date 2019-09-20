@@ -1,0 +1,29 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+      <br>
+			<h1 [ngClass]="{'first': result > 40, 'second': result < 40}">{{title}}</h1>
+      <br><br>
+      <h2 [ngClass]="'fonty1 fonty2'">{{title2}}</h2>
+      <br>
+      <h3>{{title4}}</h3>
+      <br>
+      <button type="button" (click)="getIncrement()" class="btn btn-warning btn-lg">Increment</button>&nbsp;&nbsp;
+      <button type="button" (click)="getDecrement()" class="btn btn-danger btn-lg">Decrement</button>
+      <br/><br>
+      <app-child1></app-child1>
+      <br>
+      <hr>
+      <br>
+      <h2 [ngClass]="'fonty3 fonty2'">{{title2}} 2</h2>
+      <br>
+      <h3>{{title5}}</h3>
+      <br>
+      <button type="button" (click)="getStart()" class="btn btn-info btn-lg">Start Watch</button>&nbsp;&nbsp;
+      <button type="button" (click)="getStop()" class="btn btn-dark btn-lg">Stop Watch</button>
+      <br/><br>
+      <app-child2></app-child2>
+      <br>
+		</div>
+	</div>
+</div>

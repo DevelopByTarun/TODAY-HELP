@@ -1,0 +1,32 @@
+
+<h2 [style.color]="'red'" [style.background-color]="'yellow'">
+  {{subtitle}}
+</h2>
+<br>
+<div *ngIf="isLoggedIn">
+  <div class="alert alert-warning">
+  	<h4>
+      User Successfully Logged In
+    </h4>
+  </div>
+  <div class="alert alert-info">
+  	<h5>
+      User Is :: {{user.name}}
+    </h5>
+  </div>
+</div>
+<div *ngIf="!isLoggedIn">
+  <div class="alert alert-warning">
+    <h4>
+      User Unable To Logged In
+    </h4>
+  </div>
+  <div class="alert alert-info">
+    <h5>
+      Please Logged In First
+    </h5>
+  </div>
+</div>
+<br>
+<button type="button" id="mybtn" (click)="updateValue()" class="btn btn-success">Logged In</button>
+<br>

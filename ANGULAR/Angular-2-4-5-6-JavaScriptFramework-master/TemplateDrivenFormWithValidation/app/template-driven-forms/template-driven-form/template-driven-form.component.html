@@ -1,0 +1,116 @@
+<h2 [style.color]="!isColory ? 'pink': 'brown'" [class.apply]="classic < 10">
+    {{myProp1}}
+</h2>
+<br>
+  <form #myFirstForm="ngForm" (submit)="doRegister(myFirstForm)">
+    <div class="form-group row">
+      <label for="input1" class="col-sm-2 col-form-label"><h5>UserId&nbsp;::</h5></label>
+      <div class="col-sm-10">
+        <input type="text" (input)="takeUserid($event)" class="form-control" id="input1" placeholder="Enter Userid"/>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="input2" class="col-sm-2 col-form-label"><h5>Password&nbsp;::</h5></label>
+      <div class="col-sm-10">
+        <input type="password" (input)="takePassword($event)" class="form-control" id="input2" placeholder="Enter Password"/>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="input4" class="col-sm-2 col-form-label"><h5>Name&nbsp;::</h5></label>
+      <div class="col-sm-10">
+        <input type="text" name="name" ngModel class="form-control" id="input4" placeholder="Enter Name"/>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="input3" class="col-sm-2 col-form-label"><h5>Email&nbsp;::</h5></label>
+      <div class="col-sm-10">
+        <input type="text" (input)="takeEmail($event)" class="form-control" id="input3" placeholder="Enter Email"/>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-2"><h5>Experience&nbsp;::</h5></div>
+      <div class="col-sm-10">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="experience" ngModel id="inlineCheckbox11" value="LessThan 2"/>
+          <label class="form-check-label" for="inlineCheckbox11">LessThan 2</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="experience" ngModel id="inlineCheckbox12" value="MoreThan 2"/>
+          <label class="form-check-label" for="inlineCheckbox12">MoreThan 2</label>
+        </div>
+      </div>
+    </div>
+
+    <fieldset class="form-group">
+      <div class="row">
+        <legend class="col-form-label col-sm-2 pt-0"><h5>Gender&nbsp;::</h5></legend>
+        <div class="col-sm-10">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" (click)="takeGender($event)" type="radio" name="gender" id="inlineRadio1" value="male"/>
+            <label class="form-check-label" for="inlineRadio1">Male</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" (click)="takeGender($event)" type="radio" name="gender" id="inlineRadio2" value="female"/>
+            <label class="form-check-label" for="inlineRadio2">Female</label>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="form-group row">
+      <div class="col-sm-2"><h5>Marital Status&nbsp;::</h5></div>
+      <div class="col-sm-10">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" (click)="takeMaritalStatus($event)" type="checkbox" name="maritalstats" id="inlineCheckbox1" value="married"/>
+          <label class="form-check-label" for="inlineCheckbox1">Married</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" (click)="takeMaritalStatus($event)" type="checkbox" name="maritalstats" id="inlineCheckbox2" value="unmarried"/>
+          <label class="form-check-label" for="inlineCheckbox2">Unmarried</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="input3" class="col-sm-2 col-form-label"><h5>City&nbsp;::</h5></label>
+      <div class="col-sm-10">
+        <select class="custom-select" name="selectCity" (change)="takeCity($event)">
+          <option selected>Default</option>
+          <option *ngFor="let city of cityList" value="city">
+            {{city}}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="input3" class="col-sm-2 col-form-label"><h5>Country&nbsp;::</h5></label>
+      <div class="col-sm-10">
+        <select class="custom-select" name="selectCountry" (change)="takeCountry($event)">
+          <option selected>Default</option>
+          <option *ngFor="let country of countryList" value="country">
+            {{country}}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="input3" class="col-sm-2 col-form-label"></label>
+      <div class="col-sm-10">
+        <button type="submit" class="btn btn-primary">Student Registration Form</button>&nbsp;&nbsp;
+        <button type="reset" class="btn btn-danger">Reset Form</button>
+      </div>
+    </div>
+  </form>
+<br>
+  <div class="alert alert-info">
+    <h4>
+      {{stud | json | lowercase }}
+    </h4>
+  </div>
+

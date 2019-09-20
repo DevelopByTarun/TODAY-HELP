@@ -1,0 +1,23 @@
+
+<h2 [ngStyle]="{color: !flag? 'aqua':'orange'}">{{myProp}}</h2>
+<br>
+<div class="form-group row">
+  <div class="col-sm-10">
+    <button type="submit" (click)="callGetProductsFromServer()" class="btn btn-primary btn-lg">
+      Get Products From Server Through Promise
+    </button>&nbsp;&nbsp;&nbsp;&nbsp;
+    <button type="submit" (click)="callGetProductsFromLocalServer()" class="btn btn-warning btn-lg">
+      Get Products From Local Server Through Promise
+    </button>
+  </div>
+</div>
+<br>
+<ul style="list-style-type: none">
+  <li *ngFor="let product of productList" class="looks">
+    <img src="{{product.url}}" alt="ImageNotFound">
+    <h5>{{product.name}}</h5>
+    <h6>Id :: {{product.id}}</h6>
+    <h6>Price :: {{product.price}}</h6>
+    <br>
+  </li>
+</ul>

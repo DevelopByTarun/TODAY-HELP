@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Library/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Css/OffersStylesheet.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <center>
+                    <h3 class="notice notice-danger">{{title}}</h3>
+                </center>
+                <br>
+                <section>
+                    <ul class="list-unstyled">
+                        <li ng-repeat="i in result">
+                          <img src="{{i.imageurl}}" alt="img">
+                           Id : {{i.id}} ,
+                           Name : {{i.name}} ,
+                           Discount : {{i.discount}} ,
+                           Remarks : {{i.remarks}} 
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

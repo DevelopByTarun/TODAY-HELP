@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!--    <link rel="stylesheet" href="../../Library/bootstrap/css/bootstrap.min.css" />-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <!--    <script src="../../Library/Angularjs/angular.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script>
+        // app.js
+        var app = angular.module("myApp", []);
+
+        // controller.js
+        app.controller("myCtrl", ($scope, myfactory) => {
+            $scope.doSearch = () => {
+                var promise = myfactory.callServer($scope.search);
+                console.log("I Got the Promise...");
+                for (var i = 1; i <= 5; i++) {
+                    console.log("Remaining Time ", 17 * i);
+                }
+                promise.then((data) => {
+                    $scope.result = data;
+                    console.log("Get the Data in Promise...")
+                }, (err) => {
+                    $scope.result = err;
+                    console.log("Get the Err in Promise...");
+                })
+
+            }
+        });
+
+        // model.js
+        app.factory("myfactory", ($http, $q) => {
+            var object = {
+                callServer: () => {
+                    var pr = $q.defer();
+                    //                    var url = "http://api.giphy.com/v1/gifs/search?q=" + searchParam + "&api_key=dc6zaTOxFJmzC";
+                    var url = "Data.json";
+                    $http.get(url).then(function(data) {
+                        pr.resolve(data.data);
+                        console.log("Data is Success...", data);
+                    }, function(err) {
+                        pr.reject(err);
+                        console.log("Data is Error");
+                    });
+                    return pr.promise;
+                }
+            }
+            return object;
+        });
+    </script>
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="col-md-12">
+                <h1 class="text-center">Server Call</h1>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="col-md-12">
+                <button class="btn btn-success btn-lg" ng-click="doSearch()">GetData!!@@</button>
+                <br>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="col-md-12">
+                <br>
+                <table border="2px" cellpadding="5px" width="60%" style="margin-left:20px;">
+                    <tr>
+                        <th>Name</th>
+                        <th>Rollno</th>
+                        <th>Percentage</th>
+                    </tr>
+                    <tr ng-repeat="i in result">
+                        <td>{{i.Name}}</td>
+                        <td>{{i.RollNo}}</td>
+                        <td>{{i.Percentage}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

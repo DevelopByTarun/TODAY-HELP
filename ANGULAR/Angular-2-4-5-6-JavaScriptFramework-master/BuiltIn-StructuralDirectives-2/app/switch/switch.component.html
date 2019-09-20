@@ -1,0 +1,17 @@
+<div>
+  <h1>
+    Example Of ngSwitch
+  </h1>
+  <label for="switch">Enter Value ::</label>
+  <input type="text" id="switch" placeholder="type here...." (input)="takeInput($event)">
+  <div [ngSwitch]="day">
+    <h2 *ngSwitchCase="1" [class]="apply">Sunday</h2>
+    <h2 *ngSwitchCase="2" [class]="apply">Monday</h2>
+    <h2 *ngSwitchCase="3" [class]="apply">Tuesday</h2>
+    <h2 *ngSwitchCase="4" [class]="apply">Wednesday</h2>
+    <h2 *ngSwitchCase="5" [class]="apply">Thursday</h2>
+    <h2 *ngSwitchCase="6" [class]="apply">Friday</h2>
+    <h2 *ngSwitchCase="7" [class]="apply">Saturday</h2>
+    <h2 *ngSwitchDefault>Wrong Day In Default Case</h2>
+  </div>
+</div>

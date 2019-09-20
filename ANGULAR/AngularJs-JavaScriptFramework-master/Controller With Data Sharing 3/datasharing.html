@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Sharing</title>
+    <script src="angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/factory/greetfactory.js"></script>
+    <script src="js/controllers/greetctrl.js"></script>
+</head>
+<body ng-app="greetapp" >
+   <div ng-controller="greetctrl">
+
+    
+    <h1>{{sayWelcome1}}</h1>
+       <h1>{{commonfactory}}</h1>
+        <div ng-controller="greetctrl2">
+        {{sayWelcome2}} {{commonfactory}} {{moduleage}}
+        </div>   
+    </div>
+    
+     <div ng-controller="greetctrl3">
+        {{sayWelcome3}} {{commonfactory}}
+        </div>  
+</body>
+</html>

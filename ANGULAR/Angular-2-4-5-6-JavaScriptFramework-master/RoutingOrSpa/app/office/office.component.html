@@ -1,0 +1,24 @@
+<br/>
+<h1 [ngClass]="'one two'">{{title}}</h1>
+<br/>
+<div class="btn-group">
+  <button type="button" (click)="getOfficeRouteParams()" class="btn btn-dark btn-lg">Get Route Params</button>
+</div>
+<br/><br/>
+<div class="fonty">
+  <ul class="list-group">
+  	<li class="list-group-item"><h4>Office Area ::&nbsp;{{area}}</h4></li>
+  	<li class="list-group-item"><h4>Office State ::&nbsp;{{state}}</h4></li>
+  	<li class="list-group-item"><h4>Office Country ::&nbsp;{{country}}</h4></li>
+    <li class="list-group-item"><h4>Office Pincode ::&nbsp;{{pincode}}</h4></li>
+  </ul>
+</div>
+<br/><br/>
+<div class="btn-group">
+  <button type="button" (click)="getServiceData()" class="btn btn-info btn-lg">Call GetData Of DataService</button>
+</div>
+<br/><br/>
+<div class="alert alert-info">
+	<h4>{{showData}}</h4>
+</div>
+<br/>

@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <br/>
+<h1 [ngStyle]="getStyles('yes')" class="text-center">{{title}}</h1>
+<br/><br/>
+<button type="button" class="btn btn-primary btn-lg" (click)="toggleShow()">
+  Open Hidden Div
+</button>
+<br/><br/>
+<div [hidden]="isShow" class="hide">
+<div *ngIf="isTemplate;then show1 else hide1">
+  <h3>
+  <strong>Click For Another Part</strong>
+  </h3>
+</div>
+<br/><br/>
+  <ng-template #show1>
+    <div>
+    <br/><br/>
+      <h3>This Is If Part Of Ng-If Then Else</h3>
+  <br/><br/>
+  <h3>Products Are Given Below :-</h3>
+  <ul *ngFor="let item of itemList">
+    <li *ngIf="item.price > 5000">
+     <h4 [ngClass]="{'red': item.price > 50000, 'blue': item.price <= 50000 }">
+      {{item.id}}&nbsp;{{item.name}}&nbsp;{{item.price}}&nbsp;{{item.desc}}&nbsp;<img src="{{item.image}}" alt="imagenotfound">
+     </h4>
+    </li>
+  </ul>
+    </div>
+  </ng-template>
+
+   <ng-template #hide1>
+    <div>
+    <br/><br/>
+       <h3>This Is If Part Of Ng-If Then Else</h3>
+    <br/><br/>
+    <div class="form-group">
+      <label for="sl"><h4>Please Select Your Color ::&nbsp;</h4></label>&nbsp;&nbsp;
+      <select class="form-control" [(ngModel)]="selectedColor" id="sl">
+        <option *ngFor="let color of colory">
+          {{color}}
+        </option>
+      </select>
+    </div>
+    <br/><br/>
+    <h3>Fruits Are Given Below :-</h3>
+    <ul>
+      <li *ngFor="let fruit of fruits; let i = index">
+      <h4>
+       <strong *ngIf="i > 1" [style.color]="selectedColor"> {{i+1}} &nbsp;{{fruit}}</strong>
+       <p *ngIf="i <= 1" [style.color]="selectedColor">{{i+1}}&nbsp;{{fruit}}</p>
+      </h4>
+      </li>
+    </ul>
+    </div>
+  </ng-template>
+</div>
+    </div>
+  </div>
+</div>

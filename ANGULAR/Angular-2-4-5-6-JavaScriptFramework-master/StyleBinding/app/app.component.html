@@ -1,0 +1,109 @@
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-md-12">
+          <h1>{{title}}</h1>
+          <br/>
+          <table class="table table-bordered">
+              <thead class="thead-dark">
+                  <tr>
+                      <th>No</th>
+                      <th>Syntax</th>
+                      <th>Result</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td scope="row">1</td>
+                      <td>[style.color]="result > 30 ? 'red': 'green'"</td>
+                      <td>
+                        <p [style.color]="result > 30 ? 'red': 'green'">
+                          Style Binding With Color
+                        </p>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td scope="row">2</td>
+                      <td>bind-style.color="result < 30 ? 'red': 'green'"</td>
+                      <td>
+                        <p bind-style.color="result < 30 ? 'red': 'green'">
+                          Style Binding With Color
+                        </p>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td scope="row">3</td>
+                      <td>style.color="{{result > 30 ? 'red': 'green'}}"</td>
+                      <td>
+                        <p style.color="{{result > 30 ? 'red': 'green'}}">
+                          Style Binding With Color
+                        </p>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td scope="row">4</td>
+                      <td>[style.font-size.em]="isFonty ? small : big"</td>
+                      <td>
+                        <p [style.font-size.em]="isFonty ? small/4 : big">
+                          Style Binding With Font
+                        </p>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td scope="row">5</td>
+                      <td>[style.font-size.px]="!isFonty ? small*2 : big"</td>
+                      <td>
+                        <p [style.font-size.px]="!isFonty ? small*2 : big">
+                          Style Binding With Font
+                        </p>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td scope="row">6</td>
+                      <td>[style.font-size.pt]="isFonty ? small*10 : big*10"</td>
+                      <td>
+                        <p [style.font-size.pt]="isFonty ? small*10 : big*10">
+                          Style Binding With Font
+                        </p>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td scope="row">7</td>
+                      <td>[style.font-size.%]="!isFonty ? small : big"</td>
+                      <td>
+                        <p [style.font-size.%]="!isFonty ? small : big">
+                          Style Binding With Font
+                        </p>
+                      </td>
+                  </tr>
+                   <tr>
+                      <td scope="row">8</td>
+                      <td>[style.color]="isBtn ? 'yellow' : 'aqua'"</td>
+                      <td>
+                        <button type="button" [style.color]="isBtn ? 'yellow' : 'aqua'">
+                          Style Binding With Button
+                        </button>
+                      </td>
+                  </tr>
+                   <tr>
+                      <td scope="row">9</td>
+                      <td>[style.background-color]="!isBtn ? 'black' : 'red'"</td>
+                      <td>
+                        <button type="button" [style.background-color]="!isBtn ? 'black' : 'red'" class="btn btn-default">
+                           Style Binding With Button
+                        </button>
+                      </td>
+                  </tr>
+                   <tr>
+                      <td scope="row">10</td>
+                      <td>[style.color]="isBtn ? 'aqua' : 'white'"</td>
+                      <td>
+                        <button type="button" [style.color]="isBtn ? 'aqua' : 'white'" class="btn btn-default">
+                          Style Binding With Button
+                        </button>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,110 @@
+<h2>{{myProp1 | uppercase}}</h2>
+<br>
+<div class="alert alert-warning">
+	<h3>{{myProp2}}</h3>
+</div>
+<table class="table table-bordered table-striped">
+  <thead class="thead-dark">
+  <tr>
+    <th>No</th>
+    <th>Syntax</th>
+    <th>Output</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td scope="row">1</td>
+    <td><h5>currentDate</h5></td>
+    <td><h5>{{currentDate}}</h5></td>
+  </tr>
+  <tr>
+    <td scope="row">2</td>
+    <td><h5>currentDate | date</h5></td>
+    <td><h5>{{currentDate | date}}</h5></td>
+  </tr>
+  <tr>
+    <td scope="row">3</td>
+    <td><h5>currentDate | date: 'short'</h5></td>
+    <td><h5>{{currentDate | date: 'short'}}</h5></td>
+  </tr>
+  <tr>
+    <td scope="row">4</td>
+    <td><h5>currentDate | date: 'medium'</h5></td>
+    <td><h5>{{currentDate | date: 'medium'}}</h5></td>
+  </tr>
+  <tr>
+    <td scope="row">5</td>
+    <td><h5>currentDate | date: 'fullDate'</h5></td>
+    <td><h5>{{currentDate | date: 'fullDate'}}</h5></td>
+  </tr>
+  <tr>
+    <td scope="row">6</td>
+    <td><h5>currentDate | date: 'shortDate'</h5></td>
+    <td><h5>{{currentDate | date: 'shortDate'}}</h5></td>
+  </tr>
+  <tr>
+    <td scope="row">7</td>
+    <td><h5>currentDate | date: 'mediumDate'</h5></td>
+    <td><h5>{{currentDate | date: 'mediumDate'}}</h5></td>
+  </tr>
+  <tr>
+    <td scope="row">8</td>
+    <td><h5>currentDate | date: 'longDate'</h5></td>
+    <td><h5>{{currentDate | date: 'longDate'}}</h5></td>
+  </tr>
+  <tr>
+    <td scope="row">9</td>
+    <td><h5>currentDate | date: 'shortTime'</h5></td>
+    <td><h5>{{currentDate | date: 'shortTime'}}</h5></td>
+  </tr>
+  <tr>
+    <td scope="row">10</td>
+    <td><h5>currentDate | date: 'mediumTime'</h5></td>
+    <td><h5>{{currentDate | date: 'mediumTime'}}</h5></td>
+  </tr>
+  </tbody>
+</table>
+<br><br>
+<div class="alert alert-danger">
+  <h3>{{myProp3}}</h3>
+</div>
+<table class="table table-bordered table-striped">
+	<thead class="thead-dark">
+		<tr>
+      <th>No</th>
+      <th>Syntax</th>
+      <th>Output</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+      <td scope="row">1</td>
+      <td><h5>currentDate | date :'hh:mm:ss'</h5></td>
+      <td><h5>{{currentDate | date :'hh:mm:ss'}}</h5></td>
+		</tr>
+    <tr>
+      <td scope="row">2</td>
+      <td><h5>currentDate | date :'dd-MMM-yyyy'</h5></td>
+      <td><h5>{{currentDate | date :'dd-MMM-yyyy'}}</h5></td>
+    </tr>
+    <tr>
+      <td scope="row">3</td>
+      <td><h5>currentDate | date :'h:mm'</h5></td>
+      <td><h5>{{currentDate | date :'h:mm'}}</h5></td>
+    </tr>
+    <tr>
+      <td scope="row">4</td>
+      <td><h5>currentDate | date :'dd:MMM:yyyy hh-mm-ss z'</h5></td>
+      <td><h5>{{currentDate | date :'dd:MMM:yyyy hh-mm-ss z'}}</h5></td>
+    </tr>
+	</tbody>
+</table>
+<br><br>
+<div class="alert alert-dark">
+  <h3>{{myProp4}}</h3>
+</div>
+<br>
+<h4 [ngClass]="'required option'">{{currentDate | date: format()}}</h4>
+<br>
+<button type="button" (click)="toggle()" class="btn btn-dark">Toggle Date</button>
+<br>

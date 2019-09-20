@@ -1,0 +1,11 @@
+
+.changeColor {
+  color: red;
+}
+
+.setFonts ul li {
+  font-size: 2em;
+  display: inline-block;
+  font-family: cursive;
+  padding-left: 25px;
+}

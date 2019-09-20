@@ -1,0 +1,15 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+      <br>
+      <h1 [ngClass]="{'one': flag > 10, 'two': flag < 10}">{{title}}</h1>
+      <br>
+      <app-promisecall [prop]="subtitle1"></app-promisecall>
+      <br>
+      <hr>
+      <br>
+      <app-observablecall [prop]="subtitle2"></app-observablecall>
+      <br>
+		</div>
+	</div>
+</div>

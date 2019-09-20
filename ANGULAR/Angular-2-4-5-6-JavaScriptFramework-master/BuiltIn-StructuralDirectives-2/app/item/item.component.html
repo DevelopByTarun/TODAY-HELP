@@ -1,0 +1,10 @@
+<div>
+<h1>Show-List(*ngFor), Sort-List(*ngIf) And ApplyColor(ngClass)</h1>
+<ul *ngFor="let item of itemList">
+  <li *ngIf="item.price > 1002">
+    <p [ngClass]="{'green':item.price>1006, 'blue':item.price<=1006}">
+        {{item.id}} {{item.name}} {{item.price}} {{item.desc}} {{item.image}}
+    </p>
+  </li>
+</ul>
+</div>

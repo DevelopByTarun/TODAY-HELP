@@ -1,0 +1,9 @@
+.h1 {
+    text-transform: capitalize;
+    color:gold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.s1 {
+    color: black;
+    font-size: 25px;
+}

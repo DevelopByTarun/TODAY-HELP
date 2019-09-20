@@ -1,0 +1,38 @@
+.head {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.red {
+  color: red;
+  text-transform: capitalize;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.green {
+  color: green;
+  text-transform: capitalize;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.blue {
+  color: blue;
+  text-transform: capitalize;
+  font-family: cursive;
+}
+
+.yellow {
+  color: yellow;
+  text-transform: capitalize;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.valid {
+  color: green;
+  background-color: aquamarine;
+}
+
+.inValid {
+  color: white;
+  background-color: black;
+}

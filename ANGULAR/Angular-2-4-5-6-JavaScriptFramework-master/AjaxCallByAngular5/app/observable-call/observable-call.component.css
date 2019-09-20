@@ -1,0 +1,19 @@
+
+.one {
+  text-align: justify;
+  color: black;
+  font-family: "Xingkai SC";
+}
+
+.two {
+  color: aqua;
+}
+
+ul li {
+  display: inline-block;
+}
+
+.error{
+  color: red;
+  font-size: 20px;
+}

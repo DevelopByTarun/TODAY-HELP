@@ -1,0 +1,15 @@
+.red {
+  color: blue;
+  text-align: center;
+  text-transform: uppercase;
+}
+.out {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-transform: capitalize;
+}
+
+.blue {
+  color: red;
+  text-align: center;
+  text-transform: uppercase;
+}

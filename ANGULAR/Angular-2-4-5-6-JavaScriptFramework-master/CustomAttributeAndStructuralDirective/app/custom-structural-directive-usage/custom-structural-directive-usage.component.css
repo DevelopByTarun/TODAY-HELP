@@ -1,0 +1,51 @@
+
+.isValid {
+  color: green;
+  text-transform: uppercase;
+  font-family: Times;
+}
+
+.isInvalid {
+  color: red;
+  text-transform: lowercase;
+  font-family: Verdana;
+}
+
+
+
+.myValid {
+  color: green;
+  text-transform: uppercase;
+  font-family: cursive;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.myInvalid {
+  color: red;
+  text-transform: lowercase;
+  font-family: Verdana;
+  font-style: unset;
+  font-weight: bolder;
+  font-size: 32px;
+}
+
+.myStyle1 {
+  color: green;
+  text-transform: uppercase;
+  font-family: cursive;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 2.2em;
+}
+
+.myStyle2 {
+  color: red;
+  text-transform: lowercase;
+  font-family: Verdana;
+  font-style: unset;
+  font-weight: bolder;
+  font-size: 2.2em;
+}
+

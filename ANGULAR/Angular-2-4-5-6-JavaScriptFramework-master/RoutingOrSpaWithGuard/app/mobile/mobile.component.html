@@ -1,0 +1,11 @@
+
+<h1 style="color:violet; text-transform:capitalize; text-align:center;">this is mobiles component and his parent is app component!!</h1>
+<!-- <h1 style="color:rgb(59, 16, 3); text-transform:capitalize;">Route Parameters Are :: {{msg}}</h1> -->
+<button class="btn btn-success btn-sm" (click)="loadProducts($event)">Load Products From Server</button>
+<h1 style="text-transform:capitalize;">products from server are given below ::</h1>
+<ul>
+    <li *ngFor="let products of productArray">
+        {{products.id}} {{products.name}} {{products.price}}
+        <img src="{{products.url}}" alt="image">
+    </li>
+</ul>

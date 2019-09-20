@@ -1,0 +1,9 @@
+.required {
+  color: aqua;
+  font-size: 2.5em;
+}
+
+.option {
+  text-transform: capitalize;
+  font-family: monospace;
+}

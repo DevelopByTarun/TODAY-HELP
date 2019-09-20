@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
+     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <title>Shopping Cart</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="libs/angular.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="release/output.css">
+<!--    <link rel="stylesheet" href="stylesheet/main.css">-->
+    <script src="libs/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/factory.js"></script>
+    <script src="js/controller.js"></script>
+</head>
+<body ng-app="myapp">
+   <div ng-controller="mycntrl">
+    <header >
+        <div>
+         <div class="row col-md-12 navbar  navbar-static-top navbar-custom"> 
+                     
+ 
+    <div id="wrapper">
+  
+        <div class="overlay"></div>
+  
+        <!-- Sidebar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+     
+            <ul class="nav sidebar-nav">
+                <li class="sidebar-brand">
+                    <a>
+                       Products
+                    </a>
+                </li>
+                <li ng-repeat="x in sideMenu">
+                    <a href="" ng-click="showContent(x.function)">{{x.name}}</a>
+                </li>
+             
+            </ul>
+        </nav>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        
+        
+       
+      
+        <!-- /#page-content-wrapper -->
+
+  
+    <!-- /#wrapper -->
+     <div class="navbar-header">
+     
+     
+      <div id="page-content-wrapper" class="clearfix">  
+            <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+                 <span class="hamb-top"></span>
+            	<span class="hamb-middle"></span>
+				<span class="hamb-bottom"></span>
+                
+            </button>
+           </div>
+                                 <div id="menuName"  class="clearfic"> 
+                                <a class="navbar-brand a font-custom text-custom" ng-repeat="x in menus" href={{x.link}}>{{x.name}}</a>
+                                </div>
+                        <div id="logo">
+                            <img ng-repeat="i in img" src={{i.link}} width="150px" height="100px" alt="">
+                        </div>        
+                                
+                            </div>
+                                   
+                         </div>
+                    </div>
+             </div>
+</header> <!-- End of Header -->
+   
+   
+   <div class="accordian">
+  <ul>
+    <li ng-repeat="item in slider">
+      <div class="image_title">
+        <a href="#">{{item.name}}</a>
+      </div>
+      <a href="#">
+     <img src={{item.link}}>
+			</a>
+    </li>
+
+  </ul>
+</div>
+
+    <section class="publicaciones-blog-home" ng-hide="searchSection">
+      <div class="container">
+        <div class="">
+          <h2></h2>
+          <div class="row-page row" >
+              <div class="col-lg-3" >
+              <div class="input-group custom-search-form" >
+                  <input type="text" class="form-control" ng-model="search">
+                  <span class="input-group-btn">
+<!--
+                  <select ng-model="sort" >
+                      <option selected="selected" disabled value="">Search</option>
+                      <option >name</option>
+                      <option >price</option>   
+                  </select>
+                  <input type="checkbox" ng-model="rev">
+-->
+                  <button class="btn btn-primary" type="button">
+                  <span class="glyphicon glyphicon-search"></span>
+                 </button>
+                 </span>
+               </div><!-- /input-group -->
+               <div id="sort" >
+               <select ng-model="sort" name="state" class="ddList">
+                      <option selected="selected" disabled value="">Search</option>
+                      <option class="lt">name</option>
+                      <option class="lt">price</option>   
+                  </select>
+                  <input type="checkbox" ng-model="rev">
+                  </div>
+            </div> <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="col-page col-sm-4 col-md-3" ng-repeat="x in content|filter:search|orderBy:sort:rev">
+              <a href=""  class="fondo-publicacion-home">
+                <div class="img-publicacion-home">
+                  <img class="img-responsive" src="{{x.image}}">
+                </div>
+                <div class="contenido-publicacion-home">
+                  <h3>{{x.name}}</h3>
+                  <h5>{{x.price|currency:"₹ "}}</h5>
+                  <p>{{x.desc}}<span>...</span></p>
+                  
+                </div>
+                <div class="mascara-enlace-blog-home">
+                  <label for="" style="color:white">quantity</label> 
+                  <input type="number" min=1 max={{x.quantity}} ng-model="qnt"><br>
+                  <button type="button" ng-click="addToCart(x.id,JSON)" class="btn btn-primary btn-lg active">Add to CART</button>
+                </div>
+              </a>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    <h4 style="text-align: right"> <img src="http://www.accessconsciousness.com/content/images/cartIcon.png" alt=""> Amount to be Paid:{{Total|currency:"₹ "}}</h4>
+    </section>
+    </div>
+    <div></div>
+</body>
+</html>

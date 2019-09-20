@@ -1,0 +1,106 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+      <br>
+			<h1 [ngClass]="{'one': isRequired == true}">{{title}}</h1>
+      <br>
+      <h2 [ngStyle]="{color: !isRequired ? 'aqua':'brown'}">{{subtitle1}}</h2>
+      <br>
+      <form>
+        <div class="form-group row">
+          <label for="input1" class="col-sm-2 col-form-label"><h5>Id&nbsp;::</h5></label>
+          <div class="col-sm-10">
+            <input type="text" (input)="takeId($event)" class="form-control" id="input1" placeholder="Enter Id">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="input2" class="col-sm-2 col-form-label"><h5>Name&nbsp;::</h5></label>
+          <div class="col-sm-10">
+            <input type="text" (input)="takeName($event)" class="form-control" id="input2" placeholder="Enter Name">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="input3" class="col-sm-2 col-form-label"><h5>Price&nbsp;::</h5></label>
+          <div class="col-sm-10">
+            <input type="text" (input)="takePrice($event)" class="form-control" id="input3" placeholder="Enter Price">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="input4" class="col-sm-2 col-form-label"><h5>Desc&nbsp;::</h5></label>
+          <div class="col-sm-10">
+            <input type="text" (input)="takeDesc($event)" class="form-control" id="input4" placeholder="Enter Desc">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="input4" class="col-sm-2 col-form-label"></label>
+          <div class="col-sm-10">
+            <button type="submit" (click)="forAddItem()" class="btn btn-primary">Add Item</button>&nbsp;
+            <button type="submit" (click)="forStoreItemToLocalStorage()" class="btn btn-success">Save Item To LocalStorage</button>&nbsp;
+            <button type="submit" (click)="forLoadItemsFromLocalStorage()" class="btn btn-info">Load Items From LocalStorage</button>&nbsp;
+            <button type="submit" (click)="forDeleteItemFromLocalStorage()" class="btn btn-danger">Delete Item From LocalStorage</button>
+          </div>
+        </div>
+      </form>
+      <br>
+      <table class="table table-bordered table-stripped">
+        <thead class="thead-dark">
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Desc</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of items">
+          <td><h5>{{item.id}}</h5></td>
+          <td><h5>{{item.name}}</h5></td>
+          <td><h5>{{item.price}}</h5></td>
+          <td><h5>{{item.desc}}</h5></td>
+        </tr>
+        </tbody>
+      </table>
+      <br>
+      <hr>
+      <br>
+      <h2 [ngStyle]="{color: isRequired ? 'aqua':'brown'}">{{subtitle2}}</h2>
+      <br>
+      <form>
+        <div class="form-group row">
+          <label for="input8" class="col-sm-2 col-form-label"><h5>FirstNumber&nbsp;::</h5></label>
+          <div class="col-sm-10">
+            <input type="text" (input)="takeFirstNumber($event)" class="form-control" id="input8" placeholder="Enter First Number">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="input9" class="col-sm-2 col-form-label"><h5>SecondNumber&nbsp;::</h5></label>
+          <div class="col-sm-10">
+            <input type="text" (input)="takeSecondNumber($event)" class="form-control" id="input9" placeholder="Enter Second Number">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="input4" class="col-sm-2 col-form-label"></label>
+          <div class="col-sm-10">
+            <button type="submit" (click)="forAdd()" class="btn btn-primary">Addition</button>&nbsp;
+            <button type="submit" (click)="forSubtract()" class="btn btn-success">Subtraction</button>&nbsp;
+            <button type="submit" (click)="forMultiply()" class="btn btn-info">Multiplication</button>&nbsp;
+            <button type="submit" (click)="forDivide()" class="btn btn-danger">Division</button>
+          </div>
+        </div>
+      </form>
+      <br>
+      <div class="alert alert-warning">
+        <h5>First Number Is :: {{firstNumber}}</h5>
+      </div>
+      <br>
+      <div class="alert alert-info">
+        <h5>Second Number Is :: {{secondNumber}}</h5>
+      </div>
+      <br>
+      <div class="alert alert-dark">
+        <h5>Result Is :: {{result}}</h5>
+      </div>
+      <br>
+		</div>
+	</div>
+</div>

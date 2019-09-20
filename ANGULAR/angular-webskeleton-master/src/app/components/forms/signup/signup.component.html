@@ -1,0 +1,20 @@
+<form (submit)="onSubmit()">
+  <iemail></iemail>
+  <iusername></iusername>
+  <ipassword [dual]='true'></ipassword>
+  <button class="btn btn-primary">
+    Signup
+  </button>
+  <span *ngIf="result">{{result}}</span>
+
+
+  <div>
+    <a href="/social/socialGoogle/" target="_self" class="btn btn-danger btn-block">
+      <i class="fa fa-google"></i> Login with Google</a>
+  </div>
+  <div>
+    <a href="/social/socialFacebook/" target="_self" class="btn btn-info btn-block">
+      <i class="fa fa-facebook"></i> Login with Facebook</a>
+  </div>
+
+</form>

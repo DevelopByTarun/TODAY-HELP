@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Friend App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/libs/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/model/friendfactory.js"></script>
+    <script src="js/controller/friendcontroller.js"></script>
+    
+</head>
+<body>
+    <div ng-app="myfriendapp" ng-controller="friendctrl">
+       <ul ng-repeat="obj in result.data">
+          
+           <li>
+           <div class="box">
+           <img ng-src='{{obj.image}}'><p>{{obj.name}}  </p>
+           <p>{{obj.address}}  </p>
+            <p>{{obj.phone}}  </p>
+            <p>{{obj.email}}  </p>
+            </div>
+             </li>
+             
+       </ul>
+    </div>
+</body>
+</html>

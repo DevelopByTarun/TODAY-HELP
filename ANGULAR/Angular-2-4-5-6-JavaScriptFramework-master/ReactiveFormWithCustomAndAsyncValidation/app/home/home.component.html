@@ -1,0 +1,15 @@
+
+<div [ngClass]="'setFonts'">
+  <ul style="list-style-type: none">
+    <li>
+      <a routerLinkActive="changeColor" routerLink="/" [routerLinkActiveOptions]="{exact: true}">
+        {{myProp1}}
+      </a>
+    </li>
+    <li>
+      <a routerLinkActive="changeColor" routerLink="fgroup">
+        {{myProp2}}
+      </a>
+    </li>
+  </ul>
+</div>
