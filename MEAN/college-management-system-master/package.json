@@ -14,7 +14,7 @@
     "express-favicon": "^2.0.0",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.14.2",
-    "handlebars": "^4.0.11",
+    "handlebars": "^4.5.3",
     "jade": "~1.11.0",
     "log4js": "^2.0.0",
     "mongoose": "^4.8.1",
